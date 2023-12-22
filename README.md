@@ -3,7 +3,7 @@
 ## E_Commerce_Website Using React
 
 ## Preview
-![FireShot Capture 008 - Shopping cart - localhost](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/c76d0426-d31e-48a4-8302-d35b5a652b5d)
+
 ![FireShot Capture 004 - Shopping cart - localhost](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/66e67daf-e94a-447d-a5a8-e8695bf01fcd)
 
 
