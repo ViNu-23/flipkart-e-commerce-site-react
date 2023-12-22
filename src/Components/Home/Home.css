@@ -63,8 +63,8 @@ p {
 .footer {
   background-color: #212121;
   color: #fff;
-  padding: 20px;
-  margin: 15px;
+  padding: 20px 20px 0px 20px;
+  margin: 15px 15px 0px 15px;
 }
 
 .footer-container {
@@ -98,6 +98,7 @@ p {
   text-align: center;
   padding: 10px 0;
   background-color: #222;
+  margin-top: 20px;
 }
 
 @media (max-width: 600px) {
@@ -188,5 +189,34 @@ h2{
 @media (min-width: 768px) {
   .button-50 {
     padding: 12px 50px;
+  }
+}
+.footer-two{
+  display: flex;
+  flex-direction: row;
+  background-color: #212121;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-top: 1px solid #fff;
+  padding: 15px;
+}
+.payment{
+  width: 450px;
+}
+
+
+@media (max-width: 768px) {
+  .footer-two {
+    flex-direction: column;
+    text-align:left;
+    justify-content: left;
+  }
+
+  .footer-content,
+  .c4gehN {
+    padding-bottom: 10px;
+  }
+  .payment{
+    width: 310px;
   }
 }
