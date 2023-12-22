@@ -25,6 +25,11 @@ li {
   display: flex;
   align-items: center;
 }
+/* using because of bootstrap cdn adding  addition bottom padding and margin margin pixels to links */
+.nav-links {
+ margin-bottom: 0px;
+ padding-bottom: 0px;
+}
 .nav-bar {
   justify-content: space-between;
   padding: 10px 25px 10px 25px;
@@ -84,7 +89,7 @@ li {
   .nav-links {
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 0;
     width: 100%;
     background-color: #2874f0;
@@ -116,5 +121,4 @@ li {
 }
 .icon-cart{
   width: 30px;
-  padding-top: 2px;
 }
