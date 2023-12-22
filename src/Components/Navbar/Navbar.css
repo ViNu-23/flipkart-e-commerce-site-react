@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.nav-links-rm,
+li {
+  list-style: none;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 20px 5px 20px;
+  color: #fff;
+}
+
+.nav-links-rm:hover {
+  border-radius: 15px;
+  background-color: #fff;
+  color: #2874f0;
+  text-decoration: none;
+}
+.nav-bar,
+.left-nav-section,
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-bar {
+  justify-content: space-between;
+  padding: 10px 25px 10px 25px;
+  background-color: #2874f0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px;
+}
+.git-logo {
+  width: 30px;
+  height: auto;
+  color: #2f855a;
+}
+.title {
+  padding-left: 15px;
+  font-weight: bolder;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.left-nav-section {
+  margin-left: 40px;
+}
+.flipkart-logo{
+  width: 90px;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #2874f0;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    display: none;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+.bar2 {
+  opacity: 1;
+}
+
+.bar2.hidden {
+  opacity: 0;
+}
+
+.bar1.rotate-down {
+  transform: translateY(6px) rotate(-45deg);
+}
+
+.bar3.rotate-up {
+  transform: translateY(-6px) rotate(45deg);
+}
+.icon-cart{
+  width: 24px;
+  padding-top: 4px;
+}

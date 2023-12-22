@@ -1,0 +1,145 @@
+import Navbar from "../Navbar/Navbar";
+import "./Home.css";
+import { Carousel } from 'react-bootstrap';
+import { FaFacebook } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { SiInstagram } from "react-icons/si";
+export default function Home() {
+
+  const imageLinks = [
+    'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/aa1b2bdcf519b468.jpg?q=20',
+    'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/e9e53f20aa6a3463.jpg?q=20',
+    'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/a05f4b3d67f2b16c.jpg?q=20',
+    'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/a787505b979e7579.jpg?q=20',
+  ];
+ 
+  return (
+    <>
+      <Navbar />
+      <div className="category">
+        <div className="category-items">
+          <img
+            alt="Grocery"
+            src="https://rukminim1.flixcart.com/flap/96/96/image/29327f40e9c4d26b.png?q=100"
+          ></img>
+          <p>Grocery</p>
+        </div>
+        <div className="category-items">
+          <img
+            alt="Mobiles"
+            src="https://rukminim1.flixcart.com/flap/96/96/image/22fddf3c7da4c4f4.png?q=100"
+          ></img>
+          <p>Mobiles</p>
+        </div>
+        <div className="category-items">
+          <img
+            alt="Fashion"
+            src="https://rukminim1.flixcart.com/fk-p-flap/96/96/image/0d75b34f7d8fbcb3.png?q=100"
+          ></img>
+          <p>Fashion</p>
+        </div>
+        <div className="category-items">
+          <img
+            alt="Electronics"
+            src="https://rukminim1.flixcart.com/flap/96/96/image/69c6589653afdb9a.png?q=100"
+          ></img>
+          <p>Electronics</p>
+        </div>
+        <div className="category-items">
+          <img
+            alt="Furniture"
+            src="https://rukminim1.flixcart.com/flap/96/96/image/ab7e2b022a4587dd.jpg?q=100"
+          ></img>
+          <p>Furniture</p>
+        </div>
+        <div className="category-items">
+          <img
+            alt="Appliances"
+            src="https://rukminim1.flixcart.com/fk-p-flap/96/96/image/0139228b2f7eb413.jpg?q=100"
+          ></img>
+          <p>Appliances</p>
+        </div>
+        <div className="category-items">
+          <img
+            alt="Travel"
+            src="https://rukminim1.flixcart.com/flap/96/96/image/71050627a56b4693.png?q=100"
+          ></img>
+          <p>Travel</p>
+        </div>
+
+        <div className="category-items">
+          <img
+            alt="Two Wheelers"
+            src="https://rukminim1.flixcart.com/fk-p-flap/96/96/image/05d708653beff580.png?q=100"
+          ></img>
+          <p>Two Wheelers</p>
+        </div>
+        <div className="category-items">
+          <img
+            alt="Beauty, Toys &amp; More"
+            src="https://rukminim1.flixcart.com/flap/96/96/image/dff3f7adcf3a90c6.png?q=100"
+          ></img>
+          <p>Toys</p>
+        </div>
+      </div>
+
+      <Carousel indicators={false}>
+      {imageLinks.map((imageLink, index) => (
+        <Carousel.Item key={index}>
+          <img
+            className="d-block w-100"
+            src={imageLink}
+            alt={`Slide ${index + 1}`}
+          />
+        </Carousel.Item>
+      ))}
+    </Carousel>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li>Men's Clothing</li>
+            <li>Women's Clothing</li>
+            <li>Kids' Clothing</li>
+            <li>Accessories</li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Help & Support</h4>
+          <ul>
+            <li>Contact Us</li>
+            <li>FAQ</li>
+            <li>Shipping</li>
+            <li>Returns & Exchanges</li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+            <li>Refund Policy</li>
+            <li>Accessibility</li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Connect with Us</h4>
+          <ul>
+            <li><FaFacebook />   Facebook</li>
+            <li><BsTwitterX />   Twitter</li>
+            <li><SiInstagram />   Instagram</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>&copy; 2023 Your E-Commerce Store. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </>
+  );
+}
