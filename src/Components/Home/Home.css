@@ -101,7 +101,7 @@ p {
   margin-top: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
   }
@@ -114,15 +114,15 @@ align-items: center;
 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 padding: 35px ;
 margin: 10px;
-object-fit:contain;
+width: 240px;
+height: auto;
 }
 .items-container{
 display: flex;
 flex-direction: row;
-justify-content: space-around;
-margin: 15px;
+justify-content: space-between;
+margin: 10px;
 flex-wrap: wrap;
-
 }
 .products{
   width: 160px;
@@ -132,65 +132,36 @@ flex-wrap: wrap;
   font-weight: bold;
   margin-top: 25px;
 }
+@media (max-width: 700px) {
+  .items-home{
+    width: 160px;
+padding: 15px ;
+  }
+  .products{
+    width: 90px;
+  }
+.title{
+  font-size:small;
+
+}
+.button59 {
+  font-size: 13px;
+  padding: 0px 12px 0px 12px;
+}
+}
 h2{
   text-align: center;
   margin-top: 60px;
+  font-weight: bold;
 }
 .carousel{
   margin-top: 30px;
 
 }
-
-.button-50 {
-  appearance: button;
-  background-color: #000;
-  background-image: none;
-  border: 1px solid #000;
-  border-radius: 4px;
-  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 15px;
-  margin: 0 5px 10px 0;
-  overflow: visible;
-  padding: 12px 40px;
-  text-align: center;
-  text-transform: none;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+h4{
+  color: #ffc200;
 }
 
-.button-50:focus {
-  text-decoration: none;
-}
-
-.button-50:hover {
-  text-decoration: none;
-}
-
-.button-50:active {
-  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
-  outline: 0;
-}
-
-.button-50:not([disabled]):active {
-  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-  transform: translate(2px, 2px);
-}
-
-@media (min-width: 768px) {
-  .button-50 {
-    padding: 12px 50px;
-  }
-}
 .footer-two{
   display: flex;
   flex-direction: row;
