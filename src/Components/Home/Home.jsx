@@ -4,15 +4,18 @@ import { Carousel } from 'react-bootstrap';
 import { FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
-export default function Home() {
+import data from "../../DataBase/Data";
 
+import { Link } from "react-router-dom";
+
+export default function Home() {
   const imageLinks = [
     'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/aa1b2bdcf519b468.jpg?q=20',
     'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/e9e53f20aa6a3463.jpg?q=20',
     'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/a05f4b3d67f2b16c.jpg?q=20',
     'https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/a787505b979e7579.jpg?q=20',
   ];
- 
+  const dataDisplay = data.slice(0, 12);
   return (
     <>
       <Navbar />
@@ -83,7 +86,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Carousel indicators={false}>
+      <Carousel indicators={false} className="carousel">
       {imageLinks.map((imageLink, index) => (
         <Carousel.Item key={index}>
           <img
@@ -94,6 +97,21 @@ export default function Home() {
         </Carousel.Item>
       ))}
     </Carousel>
+
+    <h2>New Products</h2>
+    <div className="items-container"> 
+   
+      {dataDisplay.map((item, index) => (
+        <div key={index} id={item.id} className="items-home">
+          <img src={item.img} alt={item.title} className="products"/>
+          <p className="title">{item.title}</p>
+          <Link to={'/Product'}>
+        <button className="button-50" role="button">Know More</button>
+        </Link>
+        </div>
+      ))}
+    </div>
+
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
