@@ -35,6 +35,10 @@ li {
   padding: 10px 25px 10px 25px;
   background-color: #2874f0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
 }
 .git-logo {
   width: 30px;

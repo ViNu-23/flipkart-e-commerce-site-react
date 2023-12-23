@@ -6,7 +6,7 @@ img {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
-  margin: 15px;
+  margin: 80px 15px 15px 15px;
   padding: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -127,7 +127,7 @@ height: auto;
 .items-container{
 display: flex;
 flex-direction: row;
-justify-content: space-between;
+justify-content:space-evenly;
 margin: 10px;
 flex-wrap: wrap;
 }
