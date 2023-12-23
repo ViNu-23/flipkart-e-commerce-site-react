@@ -16,6 +16,7 @@
 }
 .products-img{
     width: 85px;
+    transition: transform 0.3s ease-in-out;
 }
 .items-N{
     padding: 14px;
@@ -27,6 +28,11 @@
     align-items: center;
     justify-content: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.items-N:hover{
+       .products-img{
+        transform: scale(1.3);
+    }
 }
 .buy-btn{
     font-size: 10px; 
