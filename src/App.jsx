@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./Components/Home/Home";
 import Product from "./Components/Product/Product";
 import Cart from "./Components/Cart/Cart";
