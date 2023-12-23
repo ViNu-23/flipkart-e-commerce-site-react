@@ -2,6 +2,11 @@ img {
   width: 60px;
   transition: transform 0.5s ease-in-out;
 }
+@media (max-width: 768px) {
+  .category-items img{
+    width: 50px;
+  }
+}
 .category-items img:hover {
   transform: scale(1.15);
 }
@@ -11,7 +16,7 @@ img {
   justify-content: space-around;
   align-items: stretch;
   margin: 80px 15px 15px 15px;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -36,7 +41,7 @@ img {
     margin: 10px 0;
   }
 }
-p {
+ p {
   font-weight: bolder;
   font-size: small;
   text-align: center;
@@ -63,6 +68,7 @@ p {
 }
 .carousel {
   margin: 15px;
+
 }
 .footer {
   background-color: #212121;
