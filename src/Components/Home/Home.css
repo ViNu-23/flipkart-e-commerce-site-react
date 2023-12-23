@@ -20,6 +20,7 @@ img {
   margin: 10px;
   max-width: 200px;
   cursor: pointer;
+
 }
 
 @media (max-width: 768px) {
@@ -64,7 +65,7 @@ p {
   background-color: #212121;
   color: #fff;
   padding: 20px 20px 0px 20px;
-  margin: 15px 15px 0px 15px;
+  margin: 25px 15px 0px 15px;
 }
 
 .footer-container {
@@ -150,9 +151,14 @@ padding: 15px ;
 }
 }
 h2{
-  text-align: center;
+  text-align: left;
   margin-top: 60px;
   font-weight: bold;
+  margin-left: 20px;
+}
+.left-arrow{
+  height:28px;
+  margin-bottom: 4px;
 }
 .carousel{
   margin-top: 30px;

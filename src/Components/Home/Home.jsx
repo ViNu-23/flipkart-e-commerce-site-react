@@ -4,6 +4,7 @@ import { Carousel } from "react-bootstrap";
 import { FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
+import { FaCircleChevronRight } from "react-icons/fa6";
 import data from "../../DataBase/Data";
 
 import { Link } from "react-router-dom";
@@ -17,7 +18,8 @@ export default function Home() {
     "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/3a78fc043a9f7531.jpg?q=20",
     "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/5d96318f16c153aa.jpeg?q=20",
   ];
-  const dataDisplay = data.slice(0, 12);
+  const dataDisplay = data.slice(0, 4);
+  const dataDisplayTwo=data.slice(12,20);
   return (
     <>
       <Navbar />
@@ -100,7 +102,7 @@ export default function Home() {
         ))}
       </Carousel>
 
-      <h2>New Products</h2>
+      <h2>Recommended <FaCircleChevronRight className="left-arrow"/></h2>
       <div className="items-container">
         {dataDisplay.map((item, index) => (
           <div key={index} id={item.id} className="items-home">
@@ -114,6 +116,19 @@ export default function Home() {
         ))}
       </div>
 
+      <h2>New Products <FaCircleChevronRight className="left-arrow" /></h2>
+      <div className="items-container">
+        {dataDisplayTwo.map((item, index) => (
+          <div key={index} id={item.id} className="items-home">
+            <img src={item.img} alt={item.title} className="products" />
+            <p className="title">{item.title}</p>
+            <Link to={"/Product"}>
+                
+             <button type="button" className="btn btn-dark button59">Know More</button>
+            </Link>
+          </div>
+        ))}
+      </div>
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-section">
