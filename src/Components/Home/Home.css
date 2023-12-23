@@ -1,5 +1,9 @@
 img {
   width: 60px;
+  transition: transform 0.5s ease-in-out;
+}
+.category-items img:hover {
+  transform: scale(1.15);
 }
 .category {
   display: flex;
@@ -20,7 +24,6 @@ img {
   margin: 10px;
   max-width: 200px;
   cursor: pointer;
-
 }
 
 @media (max-width: 768px) {
@@ -113,68 +116,72 @@ p {
   }
 }
 
- .items-home{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-padding: 35px ;
-margin: 10px;
-width: 240px;
-height: auto;
+.items-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 35px;
+  margin: 10px;
+  width: 240px;
+  height: auto;
 }
-.items-container{
-display: flex;
-flex-direction: row;
-justify-content:space-evenly;
-margin: 10px;
-flex-wrap: wrap;
+.items-home:hover {
+  .products {
+    transform: scale(1.25);
+  }
 }
-.products{
+.items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+.products {
   width: 160px;
+  transition: transform 0.3s ease-in-out;
 }
-.title{
+.title {
   font-size: medium;
   font-weight: bold;
   margin-top: 25px;
 }
 @media (max-width: 768px) {
-  .items-home{
+  .items-home {
     width: 160px;
-padding: 15px ;
+    padding: 15px;
   }
-  .products{
+  .products {
     width: 90px;
   }
-.title{
-  font-size:small;
-
+  .title {
+    font-size: small;
+  }
+  .button59 {
+    font-size: 13px;
+    padding: 0px 12px 0px 12px;
+  }
 }
-.button59 {
-  font-size: 13px;
-  padding: 0px 12px 0px 12px;
-}
-}
-h2{
+h2 {
   text-align: left;
   margin-top: 60px;
   font-weight: bold;
   margin-left: 20px;
 }
-.left-arrow{
-  height:28px;
+.left-arrow {
+  height: 28px;
   margin-bottom: 4px;
 }
-.carousel{
+.carousel {
   margin-top: 30px;
-
 }
-h4{
+h4 {
   color: #ffc200;
 }
 
-.footer-two{
+.footer-two {
   display: flex;
   flex-direction: row;
   background-color: #212121;
@@ -183,21 +190,21 @@ h4{
   border-top: 1px solid #fff;
   padding: 15px;
 }
-.c4gehN{
+.c4gehN {
   margin-bottom: 12px;
 }
-.payment{
+.payment {
   width: 450px;
 }
 @media (max-width: 768px) {
-  .footer-two{
+  .footer-two {
     flex-direction: column;
   }
-  .payment{
+  .payment {
     width: 335px;
     margin-left: -20px;
   }
-  span{
+  span {
     margin-left: -20px;
   }
 }

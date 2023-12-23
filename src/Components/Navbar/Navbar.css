@@ -12,7 +12,6 @@ li {
   padding: 5px 20px 5px 20px;
   color: #fff;
 }
-
 .nav-links-rm:hover {
   border-radius: 15px;
   background-color: #fff;
@@ -28,8 +27,8 @@ li {
 }
 /* using because of bootstrap cdn adding  addition bottom padding and margin margin pixels to links */
 .nav-links {
- margin-bottom: 0px;
- padding-bottom: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .nav-bar {
   justify-content: space-between;
@@ -61,7 +60,7 @@ li {
 .left-nav-section {
   margin-left: 40px;
 }
-.flipkart-logo{
+.flipkart-logo {
   width: 90px;
 }
 
@@ -124,6 +123,6 @@ li {
 .bar3.rotate-up {
   transform: translateY(-6px) rotate(45deg);
 }
-.icon-cart{
+.icon-cart {
   width: 30px;
 }

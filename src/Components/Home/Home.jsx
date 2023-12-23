@@ -19,7 +19,7 @@ export default function Home() {
     "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/5d96318f16c153aa.jpeg?q=20",
   ];
   const dataDisplay = data.slice(0, 4);
-  const dataDisplayTwo=data.slice(12,20);
+  const dataDisplayTwo = data.slice(12, 20);
   return (
     <>
       <Navbar />
@@ -102,29 +102,35 @@ export default function Home() {
         ))}
       </Carousel>
 
-      <h2>Recommended <FaCircleChevronRight className="left-arrow"/></h2>
+      <h2>
+        Recommended <FaCircleChevronRight className="left-arrow" />
+      </h2>
       <div className="items-container">
         {dataDisplay.map((item, index) => (
           <div key={index} id={item.id} className="items-home">
             <img src={item.img} alt={item.title} className="products" />
             <p className="title">{item.title}</p>
             <Link to={"/Product"}>
-                
-             <button type="button" className="btn btn-dark button59">Know More</button>
+              <button type="button" className="btn btn-dark button59">
+                Know More
+              </button>
             </Link>
           </div>
         ))}
       </div>
 
-      <h2>New Products <FaCircleChevronRight className="left-arrow" /></h2>
+      <h2>
+        New Products <FaCircleChevronRight className="left-arrow" />
+      </h2>
       <div className="items-container">
         {dataDisplayTwo.map((item, index) => (
           <div key={index} id={item.id} className="items-home">
             <img src={item.img} alt={item.title} className="products" />
             <p className="title">{item.title}</p>
             <Link to={"/Product"}>
-                
-             <button type="button" className="btn btn-dark button59">Know More</button>
+              <button type="button" className="btn btn-dark button59">
+                Know More
+              </button>
             </Link>
           </div>
         ))}
@@ -219,14 +225,14 @@ export default function Home() {
             <span>Help Center</span>
           </div>
           <div className="c4gehN">
-          <img
-            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
-            alt="Payment methods"
-            className="payment"
-          />
+            <img
+              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
+              alt="Payment methods"
+              className="payment"
+            />
           </div>
-          </div>
-         
+        </div>
+
         <div className="footer-bottom">
           <p>&copy; 2023 Your E-Commerce Store. All Rights Reserved.</p>
         </div>

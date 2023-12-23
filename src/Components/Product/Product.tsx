@@ -37,14 +37,14 @@ export default function Product() {
               <img src={item.img} alt={item.title} className='products-img' />
               <span className='product-title'>{item.title}</span>
               <div className='star'>
-                <div>               
-                   <span className='rating'>{item.star}</span>
-                  <span className='rating'>{item.star}</span>
-                  <span className='rating'>{item.star}</span>
-                  <span className='rating'>{item.star}</span>
-                  </div>
                 <div>
-                <span className='review'>{item.reviews}</span>
+                  <span className='rating'>{item.star}</span>
+                  <span className='rating'>{item.star}</span>
+                  <span className='rating'>{item.star}</span>
+                  <span className='rating'>{item.star}</span>
+                </div>
+                <div>
+                  <span className='review'>{item.reviews}</span>
                 </div>
               </div>
               <div className='price'>

@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav className="nav-bar">
       <div className="left-nav-section">
         <Link to="https://github.com/ViNu-23">
-        <img src= 'https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fk-plus_3b0baa.png' className="flipkart-logo"/>
+          <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fk-plus_3b0baa.png' className="flipkart-logo" />
         </Link>
       </div>
 
