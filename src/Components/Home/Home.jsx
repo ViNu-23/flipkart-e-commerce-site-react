@@ -177,7 +177,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-two">
-          <div className="footer-content">
+          <div className="c4gehN">
             <img
               src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/sell-image-9de8ef.svg"
               alt="Become a Seller"
@@ -218,12 +218,15 @@ export default function Home() {
             />
             <span>Help Center</span>
           </div>
+          <div className="c4gehN">
           <img
             src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
             alt="Payment methods"
             className="payment"
           />
-        </div>
+          </div>
+          </div>
+         
         <div className="footer-bottom">
           <p>&copy; 2023 Your E-Commerce Store. All Rights Reserved.</p>
         </div>
