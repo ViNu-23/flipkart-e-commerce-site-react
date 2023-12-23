@@ -33,17 +33,17 @@ export default function Navbar() {
       </div>
 
       <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-        <li>
+        <li className="li">
           <Link to="/" className="nav-links-rm">
             Home
           </Link>
         </li>
-        <li>
+        <li className="li">
           <Link to="/Product" className="nav-links-rm">
             Product
           </Link>
         </li>
-        <li>
+        <li className="li">
           <Link to="/Cart" className="nav-links-rm"> <FaCartShopping className="icon-cart" />
             Cart
           </Link>

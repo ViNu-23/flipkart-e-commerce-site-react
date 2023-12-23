@@ -30,7 +30,49 @@ export default function Product() {
     <>
       <Navbar />
       <div className='store'>
-        <div className='sort-item'></div>
+        <div className='sort-item'>
+          <span className='sort-menu'>Sort Menu</span>
+          <div className='sort-brand'>
+            <span className='sort-title'>Brands</span>
+            <form>
+              <div className="input-group search">
+                <input type="text" className="form-control " placeholder='Search Brand' />
+
+              </div>
+            </form>
+          </div>
+
+          <div className='sort-brand'>
+            <span className='sort-title'>Brands</span>
+            <form>
+              <ul className='cate' >
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Adidas</li>
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Nike</li>
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Puma</li>
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Reebok</li>
+              </ul>
+            </form>
+          </div>
+          <div className='sort-brand'>
+            <span className='sort-title'>Brands</span>
+            <form>
+              <ul className='cate' >
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Adidas</li>
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Nike</li>
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Puma</li>
+                <li><input type="radio" name="brand" aria-label="Radio button for following text input" /> Reebok</li>
+              </ul>
+            </form>
+          </div>
+          <div className='sort-brand'>
+            <span className='sort-title'>Price</span>
+            <form>
+              <ul className='cate' >
+                <li><input type="range" className="form-range" min="0" max="3" step="1" id="customRange3" /></li>
+              </ul>
+            </form>
+          </div>
+        </div>
         <div className='products-store'>
           {dataProducts.map((item, index) => (
             <div key={index} id={item.id} className='items-N'>
