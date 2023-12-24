@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 150px;
+  /* display: none; */
 }
 .empty-cart {
   width: 300px;
@@ -74,7 +75,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 width: 100%;
-margin-top: 60px;
+margin-top: 35px;
 }
 .bought-items{
   display: flex;
