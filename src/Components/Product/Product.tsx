@@ -63,7 +63,6 @@ export default function Product() {
     }));
   }
 
-
   return (
     <>
       <Navbar />
@@ -207,7 +206,7 @@ export default function Product() {
         </div>
         <div className='products-store'>
           {filteredProducts.map((item, index) => (
-            <div key={index} id={item.id} className='items-N'>
+            <div key={index} className='items-N'>
               <img src={item.img} alt={item.title} className='products-img' />
               <span className='product-title'>{item.title}</span>
               <div className='star'>
