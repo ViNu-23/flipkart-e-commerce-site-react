@@ -274,7 +274,7 @@ const data = [
   {
     id: 23,
     img: "https://m.media-amazon.com/images/I/519MRhRKGFL._AC_UX575_.jpg",
-    title: "Nike Air Vapormax Plus",
+    title: "Nike Air Vapormax",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
     prevPrice: "$140,00",

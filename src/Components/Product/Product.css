@@ -9,7 +9,6 @@ flex-direction: row;
   left: 0px;
   height: 100vh;
   padding: 90px 30px 90px 30px;
-  /* margin-right: 20px; */
 }
 .sort-menu{
   font-weight: bold;
@@ -43,7 +42,6 @@ flex-direction: row;
   margin-top: 80px ;
 
 }
-
 .previews-price {
   text-decoration: line-through;
 }
@@ -87,15 +85,49 @@ flex-direction: row;
 .star {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+}
+.price{
+  display: flex;
 }
 .review {
   font-size: 10px;
 }
 .new-price {
   font-weight: bold;
+  margin-left: 5px;
 }
 .previews-price {
   font-size: small;
+}
+@media (max-width: 768px) {
+  .star{
+    flex-direction:column;
+  }
+  .price{
+    width: 65px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sort-item{
+    font-size: small;
+  }
+  .products-store{
+  margin-left: 170px;
+  }
+}
+.stars{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.rating{
+  width: 100%;
+}
+input{
+  margin-right: 5px;
+}
+.form-select{
+  width:130px;
+  margin-top: 8px;
 }
