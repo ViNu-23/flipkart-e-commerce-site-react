@@ -25,18 +25,21 @@ export default function Product() {
     setSelectedColor(color);
     setSelectedCategory('');
     setSearchBrand('');
+    setSelectedBrand('');
   };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setSelectedColor('');
     setSearchBrand('');
+    setSelectedBrand('');
   };
 
   const handleSearchChange = (value) => {
     setSearchBrand(value);
     setSelectedColor('');
     setSelectedCategory('');
+    setSelectedBrand('');
   };
 
   const handleBrandChange = (value) => {
@@ -203,7 +206,6 @@ export default function Product() {
           </div>
         </div>
         <div className='products-store'>
-          {/* {dataProducts.map((item, index) => ( */}
           {filteredProducts.map((item, index) => (
             <div key={index} id={item.id} className='items-N'>
               <img src={item.img} alt={item.title} className='products-img' />
