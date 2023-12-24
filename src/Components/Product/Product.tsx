@@ -21,7 +21,6 @@ export default function Product() {
     return brandNameFilter && colorFilter && categoryFilter && brandFilter;
   });
 
-
   const handleColorChange = (color) => {
     setSelectedColor(color);
     setSelectedCategory('');
