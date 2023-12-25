@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Product.css';
-import { Button } from '@chakra-ui/react';
+import 'react-toastify/dist/ReactToastify.css';
 import data from '../../DataBase/Data';
 
 export default function Product() {
+
   const dataProducts = data;
   const [productCounts, setProductCounts] = useState({});
   const [searchBrand, setSearchBrand] = useState('');
@@ -62,7 +63,25 @@ export default function Product() {
       [productId]: (prevCounts[productId] || 0) + 1,
     }));
   }
+  const addToCart = (itemId) => {
+    const updatedCounts = { ...productCounts };
+    const product = dataProducts.find((product) => product.id === itemId);
 
+    if (updatedCounts[itemId] > 0) {
+      alert(`${product?.title} Added to Cart`)
+      // Update local storage
+      const cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+      cartData[itemId] = {
+        quantity: updatedCounts[itemId],
+        price: dataProducts.find((product) => product.id === itemId).newPrice,
+      };
+      localStorage.setItem('cartData', JSON.stringify(cartData));
+
+    } else {
+      alert(`Please select a quantity greater than 0.`)
+
+    }
+  };
   return (
     <>
       <Navbar />
@@ -226,21 +245,25 @@ export default function Product() {
               </div>
 
               <div className='count-item'>
-                <Button onClick={() => minusOne(item.id)} className='cart-value'>
+                <button onClick={() => minusOne(item.id)} className='cart-value'>
                   -
-                </Button>
+                </button>
                 {productCounts[item.id] || 0}
-                <Button onClick={() => plusOne(item.id)} className='cart-value'>
+                <button onClick={() => plusOne(item.id)} className='cart-value'>
                   +
-                </Button>
+                </button>
               </div>
 
               <button
                 type='button'
                 className='btn btn-dark buy-btn'
+                onClick={() => {
+                  addToCart(item.id);
+                }}
               >
-                Add to Cart
+                Add to Bag
               </button>
+
             </div>
           ))}
         </div>
