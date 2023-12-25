@@ -10,7 +10,16 @@
 
 
 
-## Note: Im still working on this project
+## Skills Obtained
+ReactJs<br>
+Bootstrap<br>
+Pure CSS<br>
+Routers<br>
+ReactDom<br>
+Link<br>
+Conditional render<br>
+usestate/useeffect<br>
+Local Storage
 
 ## Disclaimer:
 
