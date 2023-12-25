@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Product.css';
-import 'react-toastify/dist/ReactToastify.css';
 import data from '../../DataBase/Data';
 
 export default function Product() {
