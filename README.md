@@ -9,8 +9,6 @@
 <img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/9d3e977b-4d5f-46d9-b28a-9fbee842ee66" width="400">
 
 
-
-
 ## Skills Obtained
 ReactJs<br>
 Bootstrap<br>
@@ -19,8 +17,9 @@ Routers<br>
 ReactDom<br>
 Link<br>
 Conditional render<br>
-usestate/useeffect<br>
-Local Storage
+Use-state/Use-effect<br>
+Local Storage<br>
+Responsive
 
 ## Disclaimer:
 
