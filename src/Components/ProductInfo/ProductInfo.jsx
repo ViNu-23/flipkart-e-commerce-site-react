@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 const ProductInfo = ({ data }) => {
   const [productCounts, setProductCounts] = useState({});
   const [alertMessage, setAlertMessage] = useState(null);
+  const [checkout, setCheckout] = useState(false);
   const { productId } = useParams();
   const product = data.find((item) => item.id === parseInt(productId, 10));
 
@@ -33,6 +34,7 @@ const ProductInfo = ({ data }) => {
   const productCount = productCounts[productId] || 1;
 
   const addToCart = () => {
+    setCheckout(true)
     // Get the existing cart data from localStorage
     const existingCart = JSON.parse(localStorage.getItem("cartData")) || {};
 
@@ -71,7 +73,7 @@ const ProductInfo = ({ data }) => {
       setTimeout(() => {
         setAlertMessage(null);
       }, 2500);
-    } 
+    }
   };
 
   return (
@@ -122,18 +124,37 @@ const ProductInfo = ({ data }) => {
               +
             </button>
           </div>
-          <button
-            style={{ padding: "10px 45px" }}
-            type="button"
-            className="btn btn-dark buy-btn"
-            onClick={addToCart}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              width: "100%",
+            }}
           >
-            Add to cart
-          </button>
+            <button
+              style={{ padding: "10px 25px" }}
+              type="button"
+              className="btn btn-dark buy-btn"
+              onClick={addToCart}
+            >
+              Add to cart
+            </button>
+            {checkout && (
+              <Link to={"/cart"}>
+                <button
+                  style={{ padding: "10px 25px" }}
+                  type="button"
+                  className="btn btn-dark buy-btn"
+                >
+                  Check Out
+                </button>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
       <div className="more-32">
-        <Link to={"/Product"}>
+        <Link to={"/product"}>
           <button
             type="button"
             className="btn btn-dark buy-btn re4"
