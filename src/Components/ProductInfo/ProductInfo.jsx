@@ -3,7 +3,8 @@ import Navbar from '../Navbar/Navbar';
 import { useParams } from 'react-router-dom';
 import './ProductInfo.css';
 import { useState } from 'react';
-
+import { FaCircleChevronRight } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 const ProductInfo = ({ data }) => {
   const [productCounts, setProductCounts] = useState({});
 
@@ -30,31 +31,38 @@ const ProductInfo = ({ data }) => {
   const productCount = productCounts[productId] || 0;
 
   const addToCart = () => {
-    // Get existing cart data from localStorage
+    // Get the existing cart data from localStorage
     const existingCart = JSON.parse(localStorage.getItem('cartData')) || {};
-
+  
     // Get the existing information for the current product in the cart
     const existingProductInfo = existingCart[productId] || { quantity: 0, price: product.newPrice, img: product.img };
-
+  
     // Update the existing product information with the current quantity
     const updatedProductInfo = {
       quantity: existingProductInfo.quantity + productCount,
       price: product.newPrice,
-    
+      img: product.img,
     };
-
-    // Update the cart data with the updated product information
-    const updatedCart = {
-      ...existingCart,
-      [productId]: updatedProductInfo,
-    };
-
-    // Store the updated cart data back to localStorage
-    localStorage.setItem('cartData', JSON.stringify(updatedCart));
-
-    // Display a message or perform any other UI update
-    alert(`Added ${productCount} ${product.title} to the cart!`);
+  
+    // Check if the product count is greater than zero before adding to the cart
+    if (productCount > 0) {
+      // Update the cart data with the updated product information
+      const updatedCart = {
+        ...existingCart,
+        [productId]: updatedProductInfo,
+      };
+  
+      // Store the updated cart data back to localStorage
+      localStorage.setItem('cartData', JSON.stringify(updatedCart));
+  
+      // Display a message or perform any other UI update
+      alert(`Added ${productCount} ${product.title} to the cart!`);
+    } else {
+      // Show an alert if the product count is zero
+      alert('Select more than zero items to add to the cart!');
+    }
   };
+  
   
   return (
     <>
@@ -106,7 +114,24 @@ const ProductInfo = ({ data }) => {
                 Add to cart
               </button>
         </div>
+        
       </div>
+            <div className='more-32'>
+            <Link  to={'/Product'}>
+            <button
+                type='button'
+                className='btn btn-dark buy-btn re4'
+               style={{
+                backgroundColor:'#2874f0',
+                border:'none'
+            
+            }}
+                
+              >
+                <span style={{fontSize:'large'}}>Return to Products</span> <FaCircleChevronRight style={{fontSize:'large',marginBottom:'6px',marginLeft:'4px'}} />
+              </button>
+              </Link>
+            </div>
     </>
   );
 };

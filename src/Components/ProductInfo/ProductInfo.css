@@ -17,6 +17,20 @@
 .prod-img{
     width: 250px;
 }
+.prod-img:hover{
+    transform: scale(1.15);
+}
+.p-details:hover{
+.p-star .stars,.new-price{
+    transform: scale(1.15); 
+}
+.new-price{
+font-size: larger;}
+}
+.p-review{
+    font-size: small;
+    margin-left: 5px;
+}
 .p-title{
     padding-top: 20px;
     text-align: center;
@@ -62,4 +76,12 @@ align-items:start;
 .dtls{
     font-weight: bold;
     font-size: large;
+}
+.more-32{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.re4{
+    padding: 8px 50px;
 }
