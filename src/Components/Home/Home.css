@@ -3,7 +3,7 @@ img {
   transition: transform 0.5s ease-in-out;
 }
 @media (max-width: 768px) {
-  .category-items img{
+  .category-items img {
     width: 50px;
   }
 }
@@ -41,7 +41,7 @@ img {
     margin: 10px 0;
   }
 }
- p {
+p {
   font-weight: bolder;
   font-size: small;
   text-align: center;
@@ -68,7 +68,6 @@ img {
 }
 .carousel {
   margin: 15px;
-
 }
 .footer {
   background-color: #212121;

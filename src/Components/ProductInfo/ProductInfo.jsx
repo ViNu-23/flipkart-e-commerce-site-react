@@ -92,7 +92,7 @@ const ProductInfo = ({ data }) => {
 
       <div className="pro-info" style={{ marginTop: "30px" }}>
         {alertMessage && (
-          <Stack sx={{ width: "100%" }} spacing={2} marginBottom={'20px'}>
+          <Stack sx={{ width: "100%" }} spacing={2} marginBottom={"20px"}>
             <Alert severity={alertMessage.severity}>
               {alertMessage.message}
             </Alert>
