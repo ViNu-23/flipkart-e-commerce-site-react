@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import data from "./DataBase/Data";
 function App() {
   return (
+    
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />} />
