@@ -5,6 +5,7 @@ import "./Cart.css";
 import { Link } from 'react-router-dom';
 import { FaTrashAlt } from "react-icons/fa";
 import dataProducts from '../../DataBase/Data';
+
 export default function Cart() {
   const [cartData, setCartData] = useState({});
 
@@ -60,7 +61,7 @@ export default function Cart() {
               <img src={product.img} alt={product.title} className="bought-img" />
               <span className="bought-product-title">{product.title}</span>
             </div>
-            <div className="qty">{quantity}</div>
+            <div className="qty">{quantity} * {price}</div>
           <div className="price-item">{price*quantity}</div>
             <div>
               <button className="dlt-product" onClick={() => handleDelete(itemId)}>

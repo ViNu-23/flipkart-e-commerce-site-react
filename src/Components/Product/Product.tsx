@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Product.css';
 import data from '../../DataBase/Data';
-
+import { Link } from 'react-router-dom';
 export default function Product() {
 
   const dataProducts = data;
-  const [productCounts, setProductCounts] = useState({});
+  // const [productCounts, setProductCounts] = useState({});
   const [searchBrand, setSearchBrand] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -49,38 +49,38 @@ export default function Product() {
     setSearchBrand('');
   };
 
-  function minusOne(productId) {
-    setProductCounts((prevCounts) => ({
-      ...prevCounts,
-      [productId]: Math.max((prevCounts[productId] || 0) - 1, 0),
-    }));
-  }
+  // function minusOne(productId) {
+  //   setProductCounts((prevCounts) => ({
+  //     ...prevCounts,
+  //     [productId]: Math.max((prevCounts[productId] || 0) - 1, 0),
+  //   }));
+  // }
 
-  function plusOne(productId) {
-    setProductCounts((prevCounts) => ({
-      ...prevCounts,
-      [productId]: (prevCounts[productId] || 0) + 1,
-    }));
-  }
-  const addToCart = (itemId) => {
-    const updatedCounts = { ...productCounts };
-    const product = dataProducts.find((product) => product.id === itemId);
+  // function plusOne(productId) {
+  //   setProductCounts((prevCounts) => ({
+  //     ...prevCounts,
+  //     [productId]: (prevCounts[productId] || 0) + 1,
+  //   }));
+  // }
+  // const addToCart = (itemId) => {
+  //   const updatedCounts = { ...productCounts };
+  //   const product = dataProducts.find((product) => product.id === itemId);
 
-    if (updatedCounts[itemId] > 0) {
-      alert(`${product?.title} Added to Cart`)
-      // Update local storage
-      const cartData = JSON.parse(localStorage.getItem('cartData')) || {};
-      cartData[itemId] = {
-        quantity: updatedCounts[itemId],
-        price: dataProducts.find((product) => product.id === itemId).newPrice,
-      };
-      localStorage.setItem('cartData', JSON.stringify(cartData));
+  //   if (updatedCounts[itemId] > 0) {
+  //     alert(`${product?.title} Added to Cart`)
+  //     // Update local storage
+  //     const cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  //     cartData[itemId] = {
+  //       quantity: updatedCounts[itemId],
+  //       price: dataProducts.find((product) => product.id === itemId).newPrice,
+  //     };
+  //     localStorage.setItem('cartData', JSON.stringify(cartData));
 
-    } else {
-      alert(`Please select a quantity greater than 0.`)
+  //   } else {
+  //     alert(`Please select a quantity greater than 0.`)
 
-    }
-  };
+  //   }
+  // };
   return (
     <>
       <Navbar />
@@ -243,7 +243,7 @@ export default function Product() {
                 <span className='new-price'> ${item.newPrice}</span>
               </div>
 
-              <div className='count-item'>
+              {/* <div className='count-item'>
                 <button onClick={() => minusOne(item.id)} className='cart-value'>
                   -
                 </button>
@@ -251,18 +251,19 @@ export default function Product() {
                 <button onClick={() => plusOne(item.id)} className='cart-value'>
                   +
                 </button>
-              </div>
+              </div> */}
+            <Link  to={`/Product-Info/${item.id}`}>
 
               <button
                 type='button'
                 className='btn btn-dark buy-btn'
-                onClick={() => {
-                  addToCart(item.id);
-                }}
+                // onClick={() => {
+                //   addToCart(item.id);
+                // }}
               >
-                Add to Bag
+                Buy Now
               </button>
-
+</Link>
             </div>
           ))}
         </div>
