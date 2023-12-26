@@ -30,7 +30,7 @@ const ProductInfo = ({ data }) => {
       [productId]: (prevCounts[productId] || 0) + 1,
     }));
   }
-  const productCount = productCounts[productId] || 0;
+  const productCount = productCounts[productId] || 1;
 
   const addToCart = () => {
     // Get the existing cart data from localStorage
@@ -71,21 +71,9 @@ const ProductInfo = ({ data }) => {
       setTimeout(() => {
         setAlertMessage(null);
       }, 2500);
-    } else {
-      // Show an error message
-      setAlertMessage({
-        severity: "error",
-        message: "Select more than zero items to add to the cart!",
-      });
-
-      // Clear the alert message after 3 seconds
-      setTimeout(() => {
-        setAlertMessage(null);
-      }, 2500);
-    }
+    } 
   };
 
-  // Show an error message
   return (
     <>
       <Navbar />

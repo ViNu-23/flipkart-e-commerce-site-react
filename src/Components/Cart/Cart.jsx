@@ -73,9 +73,9 @@ export default function Cart() {
                     </span>
                   </div>
                   <div className="qty">
-                    {quantity} * {price}
+                   Qty {quantity} X  ${price}
                   </div>
-                  <div className="price-item">{price * quantity}</div>
+                  <div className="price-item">Total: ${price * quantity}</div>
                   <div>
                     <button
                       className="dlt-product"
@@ -181,7 +181,7 @@ export default function Cart() {
                 </div>
 
                 <div className="d-flex justify-content-between mb-1">
-                  <p className="mb-1">Total (Incl. taxes)</p>
+                  <p className="mb-1">Grand Total (Incl. taxes)</p>
                   <p className="mb-1">${totalCost}</p>
                 </div>
 
