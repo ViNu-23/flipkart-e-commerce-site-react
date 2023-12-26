@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="nav-bar">
       <div className="left-nav-section">
-        <Link to="https://github.com/ViNu-23">
+        <Link to="https://github.com/ViNu-23/flipkart-e-commerce-site-react">
           <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fk-plus_3b0baa.png' className="flipkart-logo" />
         </Link>
       </div>
