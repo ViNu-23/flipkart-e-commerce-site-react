@@ -4,7 +4,8 @@
 
 ## Preview
 <img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/35a636a6-a992-4f8b-a87f-fec7de70c5c8" width="400">
-<img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/2ba38de6-79d1-4894-ae8f-b99cf43155c0" width="400">
+<img src='https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/89b4576b-1510-4f58-bd2f-2fec07bce420' width="400">
+<img src='https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/0a7471e7-5dce-45aa-befa-2601d528c08b' width="400">
 <img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/ea2167e1-3fb2-4ea8-bf0c-1c905f5a5409" width="400">
 <img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/9d3e977b-4d5f-46d9-b28a-9fbee842ee66" width="400">
 
