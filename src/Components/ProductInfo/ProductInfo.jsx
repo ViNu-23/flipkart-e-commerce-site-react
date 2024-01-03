@@ -7,8 +7,8 @@ import Stack from "@mui/material/Stack";
 import { useState } from "react";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import data from '../../DataBase/Data';
-  
+import data from "../../DataBase/Data";
+
 const RecomendationProducts = data;
 
 const ProductInfo = ({ data }) => {
@@ -37,7 +37,7 @@ const ProductInfo = ({ data }) => {
   const productCount = productCounts[productId] || 1;
 
   const addToCart = () => {
-    setCheckout(true)
+    setCheckout(true);
     // Get the existing cart data from localStorage
     const existingCart = JSON.parse(localStorage.getItem("cartData")) || {};
 
@@ -178,51 +178,53 @@ const ProductInfo = ({ data }) => {
           </button>
         </Link>
       </div>
-      <h5 style={{
-        margin:'10px 30px'
-
-      }}>You might be interested in {product.company}</h5>
-<div className="recByBrand" style={{
-  display:'flex',
-  flexDirection:'row',
-  flexWrap:'wrap',
-justifyContent:'space-evenly'
-}}>
-
-{RecomendationProducts
-    .filter(item => item.company === product.company && item.title !== product.title)
-    .map((item, index) => (
-            <div key={index} className='items-N'>
-              <img src={item.img} alt={item.title} className='products-img' />
-              <span className='product-title'>{item.title}</span>
-              <div className='star'>
-                <div className='stars'>
-                  <span className='rating'>{item.star}</span>
-                  <span className='rating'>{item.star}</span>
-                  <span className='rating'>{item.star}</span>
-                  <span className='rating'>{item.star}</span>
-                </div>
-                <div>
-                  <span className='review'>{item.reviews}</span>
-                </div>
+      <h5
+        style={{
+          margin: "10px 30px",
+        }}
+      >
+        You might be interested in {product.company}
+      </h5>
+      <div
+        className="recByBrand"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "space-evenly",
+        }}
+      >
+        {RecomendationProducts.filter(
+          (item) =>
+            item.company === product.company && item.title !== product.title
+        ).map((item, index) => (
+          <div key={index} className="items-N">
+            <img src={item.img} alt={item.title} className="products-img" />
+            <span className="product-title">{item.title}</span>
+            <div className="star">
+              <div className="stars">
+                <span className="rating">{item.star}</span>
+                <span className="rating">{item.star}</span>
+                <span className="rating">{item.star}</span>
+                <span className="rating">{item.star}</span>
               </div>
-              <div className='price'>
-                <span className='previews-price'>{item.prevPrice}</span>
-                <span className='new-price'> ${item.newPrice}</span>
+              <div>
+                <span className="review">{item.reviews}</span>
               </div>
-
-              <Link to={`/Product-Info/${item.id}`}>
-                <button
-                  type='button'
-                  className='btn btn-dark buy-btn'
-                >
-                  Buy Now
-                </button>
-              </Link>
             </div>
-          ))}
-        </div>
+            <div className="price">
+              <span className="previews-price">{item.prevPrice}</span>
+              <span className="new-price"> ${item.newPrice}</span>
+            </div>
 
+            <Link to={`/Product-Info/${item.id}`}>
+              <button type="button" className="btn btn-dark buy-btn">
+                Buy Now
+              </button>
+            </Link>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
