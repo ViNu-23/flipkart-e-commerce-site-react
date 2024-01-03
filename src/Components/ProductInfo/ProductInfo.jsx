@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../Navbar/Navbar";
 import { useParams } from "react-router-dom";
 import "./ProductInfo.css";
