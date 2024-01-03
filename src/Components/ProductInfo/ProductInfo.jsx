@@ -7,6 +7,9 @@ import Stack from "@mui/material/Stack";
 import { useState } from "react";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import data from '../../DataBase/Data';
+  
+const RecomendationProducts = data;
 
 const ProductInfo = ({ data }) => {
   const [productCounts, setProductCounts] = useState({});
@@ -111,6 +114,7 @@ const ProductInfo = ({ data }) => {
             <span className="new-price"> ${product.newPrice}</span>
           </div>
           <div className="pa-info">
+            {/* product company name */}
             <span>Company: {product.company}</span>
             <span>Color: {product.color}</span>
             <span>Category: {product.category}</span>
@@ -174,6 +178,51 @@ const ProductInfo = ({ data }) => {
           </button>
         </Link>
       </div>
+      <h5 style={{
+        margin:'10px 30px'
+
+      }}>You might be interested in {product.company}</h5>
+<div className="recByBrand" style={{
+  display:'flex',
+  flexDirection:'row',
+  flexWrap:'wrap',
+justifyContent:'space-evenly'
+}}>
+
+{RecomendationProducts
+    .filter(item => item.company === product.company && item.title !== product.title)
+    .map((item, index) => (
+            <div key={index} className='items-N'>
+              <img src={item.img} alt={item.title} className='products-img' />
+              <span className='product-title'>{item.title}</span>
+              <div className='star'>
+                <div className='stars'>
+                  <span className='rating'>{item.star}</span>
+                  <span className='rating'>{item.star}</span>
+                  <span className='rating'>{item.star}</span>
+                  <span className='rating'>{item.star}</span>
+                </div>
+                <div>
+                  <span className='review'>{item.reviews}</span>
+                </div>
+              </div>
+              <div className='price'>
+                <span className='previews-price'>{item.prevPrice}</span>
+                <span className='new-price'> ${item.newPrice}</span>
+              </div>
+
+              <Link to={`/Product-Info/${item.id}`}>
+                <button
+                  type='button'
+                  className='btn btn-dark buy-btn'
+                >
+                  Buy Now
+                </button>
+              </Link>
+            </div>
+          ))}
+        </div>
+
     </>
   );
 };
