@@ -1,6 +1,5 @@
 import Navbar from "../Navbar/Navbar";
 import "./Home.css";
-import Login from "../Login/Login";
 import { Carousel } from "react-bootstrap";
 import { FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
@@ -120,7 +119,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <Link to={"/Login"}> click</Link>
       <h2>
         New Products <FaCircleChevronRight className="left-arrow" />
       </h2>
