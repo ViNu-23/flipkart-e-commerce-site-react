@@ -9,12 +9,7 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const [clickCount, setClickCount] = useState(0);
 
-  const handleButtonClick = () => {
-    setClickCount((prevCount) => prevCount + 1);
-  };
-  const titleClassName = clickCount > 5 ? "glowing-title" : "";
   return (
     <nav className="nav-bar">
       <div className="left-nav-section">
