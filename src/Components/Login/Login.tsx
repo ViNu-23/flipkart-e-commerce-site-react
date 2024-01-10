@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
 export default function Login() {
@@ -8,6 +10,7 @@ export default function Login() {
   const [emailField, setEmailField] = useState(true);
   const [otpField, setOtpField] = useState(false);
   const [passField, setPassField] = useState(false);
+  const [checkBoxChecked, setCheckBoxChecked] = useState(false);
 
   // Move the declaration to the top
   const [userEmail, setUserEmail] = useState('');
@@ -16,37 +19,49 @@ export default function Login() {
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
   const inputField = () => {
-    if (emailField === true) {
+    if (emailField) {
+      const userEmailValue = userEmail || (emailInputRef.current && emailInputRef.current.value);
+
+      if (!userEmailValue) {
+        toast.error('Please enter your email/phone number');
+        return;
+      }
+
       setEmailField(false);
       setOtpField(true);
       setButtonText('Validate OTP');
-    } else if (otpField === true) {
+    } else if (otpField) {
+      const otpValue = '4';  // Add the logic to get OTP value from the input field
+      if (!otpValue) {
+        toast.error('Please enter the OTP');
+        return;
+      }
+
       setOtpField(false);
       setPassField(true);
       setButtonText('Sign In');
-    }
-
-    if (passField === true) {
-      // Use stored email if available
-      const userEmailValue = userEmail || (emailInputRef.current && emailInputRef.current.value);
-
+    } else if (passField) {
       const userPassword = passwordInputRef.current?.value;
 
-      // Save user details to local storage
+      if (!userPassword) {
+        toast.error('Please set your password');
+        return;
+      }
+
       const userDetails = {
-        email: userEmailValue,
+        email: userEmail,
         password: userPassword,
       };
 
       localStorage.setItem('userDetails', JSON.stringify(userDetails));
 
-      // Redirect to '/Home'
       navigate('/Home');
     }
   };
 
   return (
     <>
+    <ToastContainer />
       <div
         style={{
           height: '100vh',
@@ -100,7 +115,8 @@ export default function Login() {
               />
             </div>
           </div>
-          <div
+         <form action="get">
+         <div
             className='login-form'
             style={{
               width: '380px',
@@ -144,15 +160,23 @@ export default function Login() {
                   id='floatingPassword'
                   placeholder='Password'
                   ref={passwordInputRef}
+                  autoComplete='on'
                 />
                 <label htmlFor='floatingPassword'>Set Password</label>
               </div>
             )}
+            {emailField && (
+              <div className="form-check">
+            <input className="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled/>
 
-            <span style={{ fontSize: '10px' }}>
-              By continuing, you agree to Flipkart's Terms of Use and Privacy
-              Policy.
-            </span>
+              <span style={{ fontSize: '10px' }}>
+                By continuing, you agree to Flipkart's Terms of Use and Privacy
+                Policy.
+              </span>
+              </div>
+              
+            )}
+
 
             <div
               className='d-grid gap-2 mb-3'
@@ -172,6 +196,7 @@ export default function Login() {
               </button>
             </div>
           </div>
+         </form>
         </div>
       </div>
     </>
