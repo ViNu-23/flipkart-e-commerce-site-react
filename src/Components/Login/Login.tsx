@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useMediaQuery } from '@react-hook/media-query';
-import './Login.css';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -73,58 +72,69 @@ export default function Login() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor:'#2874f0'
+          backgroundColor: '#2874f0',
+
         }}
       >
         <div
           className='login-container'
           style={{
             display: 'flex',
-            backgroundColor:'#fff'
+            backgroundColor: '#fff',
+          flexDirection: isSmallScreen ? 'column' : 'row',
+            
           }}
         >
-          {!isSmallScreen&&(          
-          <div
-            className='login-img'
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              backgroundColor: '#2C3E50',
-              color: '#fff',
-              padding: '30px',
-              width: '330px',
-              
-            }}
-          >
-            <span
-              style={{
-                marginBottom: '18px',
-                fontWeight: 'bold',
-                fontSize: '25px',
-              }}
-            >
-              Login
-            </span>
-            <span>
-              Get access to your Orders, Wishlist and Recommendations
-            </span>
+          {!isSmallScreen && (
             <div
+              className='login-img'
               style={{
                 display: 'flex',
-                justifyContent: 'center',
+                flexDirection: 'column',
+                backgroundColor: '#2C3E50',
+                color: '#fff',
+                padding: '30px',
+                width: '330px',
+
               }}
             >
-              <img
-                src='https://www.bingocycles.com/images/login_img.png'
-                alt='login-img'
+              <span
                 style={{
-                  width: '60%',
-                  marginTop: '150px',
+                  marginBottom: '18px',
+                  fontWeight: 'bold',
+                  fontSize: '25px',
                 }}
-              />
-            </div>
-          </div>)}
-
+              >
+                Login
+              </span>
+              <span>
+                Get access to your Orders, Wishlist and Recommendations
+              </span>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <img
+                  src='
+                  https://daiyra.me/wp-content/uploads/2022/07/ecommerce.gif
+                  '
+                  alt='login-img'
+                  style={{
+                    width: '70%',
+                    marginTop: '100px',
+                  }}
+                />
+              </div>
+            </div>)}
+          {isSmallScreen && (
+            <img src=" https://media.licdn.com/dms/image/D4D12AQFvqALoStLQaQ/article-cover_image-shrink_600_2000/0/1698387745891?e=2147483647&v=beta&t=tapWtPz-xt1XKfDtep0mksFHkqzz8E1tclvsnjGSWwU" alt="gif-login" 
+            style={{
+              width:'380px'
+            }}
+            />
+          )}
           <form action="get">
             <div
               className='login-form'
@@ -179,9 +189,9 @@ export default function Login() {
                 <div className="form-check">
                   <input className="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled />
 
-                  <span style={{ 
-                  fontSize: '12px',
-                  padding: isSmallScreen ? '20px' : '0px',
+                  <span style={{
+                    fontSize: '12px',
+                    padding: isSmallScreen ? '20px' : '0px',
 
                   }}>
                     By continuing, you agree to Flipkart's Terms of Use and Privacy
