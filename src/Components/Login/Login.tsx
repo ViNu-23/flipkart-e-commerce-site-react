@@ -10,58 +10,61 @@ export default function Login() {
   const [emailField, setEmailField] = useState(true);
   const [otpField, setOtpField] = useState(false);
   const [passField, setPassField] = useState(false);
-  const [checkBoxChecked, setCheckBoxChecked] = useState(false);
-
-  // Move the declaration to the top
   const [userEmail, setUserEmail] = useState('');
 
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
+  const isEmail = (input) => {
+    // Regex pattern 
+    const emailPattern = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+    const phonePattern = /^\d{10}$/;
+
+    return emailPattern.test(input) || phonePattern.test(input);
+  };
   const inputField = () => {
     if (emailField) {
       const userEmailValue = userEmail || (emailInputRef.current && emailInputRef.current.value);
 
-      if (!userEmailValue) {
-        toast.error('Please enter your email/phone number');
-        return;
+      if (isEmail(userEmailValue)) {
+        setEmailField(false);
+        setOtpField(true);
+        setButtonText('Validate OTP');
+      } else {
+        toast.error('Invalid format');
       }
-
-      setEmailField(false);
-      setOtpField(true);
-      setButtonText('Validate OTP');
     } else if (otpField) {
-      const otpValue = '4';  // Add the logic to get OTP value from the input field
+      const otpValue = true;  // Add the logic to get OTP 
       if (!otpValue) {
         toast.error('Please enter the OTP');
         return;
       }
-
       setOtpField(false);
       setPassField(true);
       setButtonText('Sign In');
     } else if (passField) {
       const userPassword = passwordInputRef.current?.value;
-
       if (!userPassword) {
         toast.error('Please set your password');
         return;
       }
-
+      if (userPassword.length < 8) {
+        toast.error('Password must be at least 8 characters long');
+        return;
+      }
       const userDetails = {
         email: userEmail,
         password: userPassword,
       };
 
       localStorage.setItem('userDetails', JSON.stringify(userDetails));
-
       navigate('/Home');
     }
   };
 
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <div
         style={{
           height: '100vh',
@@ -115,88 +118,86 @@ export default function Login() {
               />
             </div>
           </div>
-         <form action="get">
-         <div
-            className='login-form'
-            style={{
-              width: '380px',
-              padding: '20px',
-            }}
-          >
-            {emailField && (
-              <div className='form-floating mb-3' style={{ marginTop: '20px' }}>
-                <input
-                  type='email'
-                  className='form-control'
-                  id='floatingInput'
-                  placeholder='name@example.com'
-                  ref={emailInputRef}
-                  value={userEmail}
-                  onChange={(e) => setUserEmail(e.target.value)}
-                />
-                <label htmlFor='floatingInput'>
-                  Email Address / Phone Number
-                </label>
-              </div>
-            )}
-
-            {otpField && (
-              <div className='form-floating mb-3'>
-                <input
-                  type='number'
-                  className='form-control'
-                  id='floatingInput'
-                  placeholder='name@example.com'
-                />
-                <label htmlFor='floatingInput'>Enter OTP</label>
-              </div>
-            )}
-
-            {passField && (
-              <div className='form-floating mb-3'>
-                <input
-                  type='password'
-                  className='form-control'
-                  id='floatingPassword'
-                  placeholder='Password'
-                  ref={passwordInputRef}
-                  autoComplete='on'
-                />
-                <label htmlFor='floatingPassword'>Set Password</label>
-              </div>
-            )}
-            {emailField && (
-              <div className="form-check">
-            <input className="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled/>
-
-              <span style={{ fontSize: '10px' }}>
-                By continuing, you agree to Flipkart's Terms of Use and Privacy
-                Policy.
-              </span>
-              </div>
-              
-            )}
-
-
+          <form action="get">
             <div
-              className='d-grid gap-2 mb-3'
-              style={{ marginTop: '10px' }}
+              className='login-form'
+              style={{
+                width: '380px',
+                padding: '20px',
+              }}
             >
-              <button
-                className='btn '
-                type='button'
-                style={{
-                  backgroundColor: '#fb641b',
-                  color: '#fff',
-                  padding: '10px 30px',
-                }}
-                onClick={inputField}
+              {emailField && (
+                <div className='form-floating mb-3' style={{ marginTop: '20px' }}>
+                  <input
+                    type='text'
+                    className='form-control'
+                    id='floatingInput'
+                    placeholder='name@example.com'
+                    ref={emailInputRef}
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                  />
+                  <label htmlFor='floatingInput'>
+                    Email Address / Phone Number
+                  </label>
+                </div>
+              )}
+
+              {otpField && (
+                <div className='form-floating mb-3'>
+                  <input
+                    type='number'
+                    className='form-control'
+                    id='floatingInput'
+                    placeholder='name@example.com'
+                  />
+                  <label htmlFor='floatingInput'>Enter OTP</label>
+                </div>
+              )}
+
+              {passField && (
+                <div className='form-floating mb-3'>
+                  <input
+                    type='password'
+                    className='form-control'
+                    id='floatingPassword'
+                    placeholder='Password'
+                    ref={passwordInputRef}
+                    autoComplete='on'
+                  />
+                  <label htmlFor='floatingPassword'>Set Password</label>
+                </div>
+              )}
+              {emailField && (
+                <div className="form-check">
+                  <input className="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled />
+
+                  <span style={{ fontSize: '10px' }}>
+                    By continuing, you agree to Flipkart's Terms of Use and Privacy
+                    Policy.
+                  </span>
+                </div>
+
+              )}
+              <div
+                className='d-grid gap-2 mb-3'
+                style={{ marginTop: '10px' }}
               >
-                {buttonText}
-              </button>
+                <button
+                  className='btn '
+                  type='button'
+                  style={{
+                    backgroundColor: '#fb641b',
+                    color: '#fff',
+                    padding: '10px 30px',
+                  }}
+                  onClick={inputField}
+                >
+                  {buttonText}
+                </button>
+              </div>
             </div>
-          </div>
-         </form>
+          </form>
         </div>
       </div>
     </>
