@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useMediaQuery } from '@react-hook/media-query';
 import './Login.css';
 
 export default function Login() {
@@ -14,6 +15,7 @@ export default function Login() {
 
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
   const isEmail = (input) => {
     // Regex pattern 
@@ -71,23 +73,27 @@ export default function Login() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          backgroundColor:'#2874f0'
         }}
       >
         <div
           className='login-container'
           style={{
             display: 'flex',
+            backgroundColor:'#fff'
           }}
         >
+          {!isSmallScreen&&(          
           <div
             className='login-img'
             style={{
               display: 'flex',
               flexDirection: 'column',
-              backgroundColor: '#2874f0',
+              backgroundColor: '#2C3E50',
               color: '#fff',
               padding: '30px',
               width: '330px',
+              
             }}
           >
             <span
@@ -117,7 +123,8 @@ export default function Login() {
                 }}
               />
             </div>
-          </div>
+          </div>)}
+
           <form action="get">
             <div
               className='login-form'
@@ -172,7 +179,11 @@ export default function Login() {
                 <div className="form-check">
                   <input className="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled />
 
-                  <span style={{ fontSize: '10px' }}>
+                  <span style={{ 
+                  fontSize: '12px',
+                  padding: isSmallScreen ? '20px' : '0px',
+
+                  }}>
                     By continuing, you agree to Flipkart's Terms of Use and Privacy
                     Policy.
                   </span>
