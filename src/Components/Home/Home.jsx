@@ -6,6 +6,8 @@ import { BsTwitterX } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import data from "../../DataBase/Data";
+import data2 from "../../DataBase/Data2";
+
 
 import { Link } from "react-router-dom";
 
@@ -18,7 +20,7 @@ export default function Home() {
     "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/3a78fc043a9f7531.jpg?q=20",
     "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/5d96318f16c153aa.jpeg?q=20",
   ];
-  const dataDisplay = data.slice(0, 4);
+  const dataDisplay = data2.slice(0, 4);
   const dataDisplayTwo = data.slice(12, 20);
   return (
     <>
