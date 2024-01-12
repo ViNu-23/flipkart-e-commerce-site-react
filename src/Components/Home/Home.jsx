@@ -121,9 +121,9 @@ export default function Home() {
       <h2>
         New Products <FaCircleChevronRight className="left-arrow" />
       </h2>
-      <div className="items-container">
+      <div className="items-container" style={{justifyContent:'space-evenly'}}>
         {dataDisplayTwo.map((item, index) => (
-          <div key={index} id={item.id} className="items-home" style={{margin:'10px'}}>
+          <div key={index} id={item.id} className="items-home" style={{margin:'5px'}}>
             <img src={item.img} alt={item.title} className="products" />
             <p className="title">{item.title}</p>
             <Link to={"/Product"}>
