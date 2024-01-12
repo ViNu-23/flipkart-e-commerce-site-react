@@ -123,7 +123,7 @@ export default function Home() {
       </h2>
       <div className="items-container">
         {dataDisplayTwo.map((item, index) => (
-          <div key={index} id={item.id} className="items-home">
+          <div key={index} id={item.id} className="items-home" style={{margin:'10px'}}>
             <img src={item.img} alt={item.title} className="products" />
             <p className="title">{item.title}</p>
             <Link to={"/Product"}>
