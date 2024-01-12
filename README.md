@@ -1,6 +1,6 @@
 # React + Vite
 
-## E_Commerce_Website Using React
+## E_Commerce_Website Using React (Responsive)
 
 ## Preview
 <img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/8fab3e8d-a0c5-4927-bb27-141777a1f357" width="400">
