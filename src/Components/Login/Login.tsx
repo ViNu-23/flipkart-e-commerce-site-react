@@ -118,8 +118,7 @@ export default function Login() {
               >
                 <img
                   src='
-                  https://daiyra.me/wp-content/uploads/2022/07/ecommerce.gif
-                  '
+                  https://www.bingocycles.com/images/login_img.png'
                   alt='login-img'
                   style={{
                     width: '70%',
@@ -161,7 +160,7 @@ export default function Login() {
               )}
 
               {otpField && (
-                <div className='form-floating mb-3'>
+                <div className='form-floating mb-3' >
                   <input
                     type='number'
                     className='form-control'
@@ -169,6 +168,14 @@ export default function Login() {
                     placeholder='name@example.com'
                   />
                   <label htmlFor='floatingInput'>Enter OTP</label>
+                  <label>Enter OTP</label>
+<div style={{
+  display:'flex',
+  justifyContent:'center',
+  marginTop:'10px'
+}}
+
+><span>OTP</span></div>
                 </div>
               )}
 
