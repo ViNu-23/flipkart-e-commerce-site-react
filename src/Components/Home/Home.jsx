@@ -6,8 +6,6 @@ import { BsTwitterX } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import data from "../../DataBase/Data";
-
-
 import { Link } from "react-router-dom";
 
 export default function Home() {

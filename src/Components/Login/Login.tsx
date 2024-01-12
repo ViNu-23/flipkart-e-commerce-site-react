@@ -35,7 +35,7 @@ export default function Login() {
         toast.error('Invalid format');
       }
     } else if (otpField) {
-      const otpValue = true;  // Add the logic to get OTP 
+      const otpValue = 1234;  // Add the logic to get OTP 
       if (!otpValue) {
         toast.error('Please enter the OTP');
         return;
