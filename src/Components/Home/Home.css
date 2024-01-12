@@ -4,7 +4,7 @@ img {
 }
 @media (max-width: 768px) {
   .category-items img {
-    width: 50px;
+    width: 65px;
   }
 }
 .category-items img:hover {
@@ -13,7 +13,7 @@ img {
 .category {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: stretch;
   margin: 80px 15px 15px 15px;
   padding: 20px 20px 0px 20px;
@@ -21,7 +21,6 @@ img {
 }
 
 .category-items {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +28,7 @@ img {
   margin: 10px;
   max-width: 200px;
   cursor: pointer;
+  padding: 6px;
 }
 
 @media (max-width: 768px) {
