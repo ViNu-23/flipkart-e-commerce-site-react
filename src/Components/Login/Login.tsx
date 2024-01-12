@@ -11,11 +11,19 @@ export default function Login() {
   const [otpField, setOtpField] = useState(false);
   const [passField, setPassField] = useState(false);
   const [userEmail, setUserEmail] = useState('');
+  const [generatedOTP, setGeneratedOTP] = useState('');
 
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
+  const otpInputRef = useRef<HTMLInputElement>(null);
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
+  const generateRandomOTP = () => {
+    // Generate a random 4-digit OTP
+    const otp = Math.floor(1000 + Math.random() * 9000);
+    setGeneratedOTP(otp.toString());
+    return otp;
+  };
   const isEmail = (input) => {
     // Regex pattern 
     const emailPattern = /^[a-zA-Z0-9._-]+@gmail\.com$/;
@@ -31,13 +39,15 @@ export default function Login() {
         setEmailField(false);
         setOtpField(true);
         setButtonText('Validate OTP');
+        generateRandomOTP();
       } else {
         toast.error('Invalid format');
       }
     } else if (otpField) {
-      const otpValue = 1234;  // Add the logic to get OTP 
-      if (!otpValue) {
-        toast.error('Please enter the OTP');
+      const enteredOTP = otpInputRef.current?.value;
+
+      if (!enteredOTP || enteredOTP !== generatedOTP) {
+        toast.error('Please enter Valid OTP');
         return;
       }
       setOtpField(false);
@@ -81,8 +91,8 @@ export default function Login() {
           style={{
             display: 'flex',
             backgroundColor: '#fff',
-          flexDirection: isSmallScreen ? 'column' : 'row',
-            
+            flexDirection: isSmallScreen ? 'column' : 'row',
+
           }}
         >
           {!isSmallScreen && (
@@ -128,10 +138,10 @@ export default function Login() {
               </div>
             </div>)}
           {isSmallScreen && (
-            <img src=" https://media.licdn.com/dms/image/D4D12AQFvqALoStLQaQ/article-cover_image-shrink_600_2000/0/1698387745891?e=2147483647&v=beta&t=tapWtPz-xt1XKfDtep0mksFHkqzz8E1tclvsnjGSWwU" alt="gif-login" 
-            style={{
-              width:'380px'
-            }}
+            <img src=" https://media.licdn.com/dms/image/D4D12AQFvqALoStLQaQ/article-cover_image-shrink_600_2000/0/1698387745891?e=2147483647&v=beta&t=tapWtPz-xt1XKfDtep0mksFHkqzz8E1tclvsnjGSWwU" alt="gif-login"
+              style={{
+                width: '380px'
+              }}
             />
           )}
           <form action="get">
@@ -166,16 +176,21 @@ export default function Login() {
                     className='form-control'
                     id='floatingInput'
                     placeholder='name@example.com'
+                    ref={otpInputRef}
                   />
                   <label htmlFor='floatingInput'>Enter OTP</label>
                   <label>Enter OTP</label>
-<div style={{
-  display:'flex',
-  justifyContent:'center',
-  marginTop:'10px'
-}}
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginTop: '10px'
+                  }}
 
-><span>OTP</span></div>
+                  ><span style={{
+                    fontWeight: 'bold',
+                    fontSize: 'large',
+                    letterSpacing: '10px'
+                  }}>{generatedOTP}</span></div>
                 </div>
               )}
 
