@@ -31,19 +31,19 @@ export default function Profile() {
             <tbody className='user-details'>
               <tr>
                 <td className='tds'>Name:</td>
-                <td>vijay<HiOutlinePencilAlt style={{ marginLeft: '10px' ,cursor:'pointer'}} /></td>
+                <td>vijay<HiOutlinePencilAlt style={{ marginLeft: '10px' ,cursor:'pointer',color:'#2874f0'}} /></td>
               </tr>
               <tr>
                 <td className='tds'>Email:</td>
-                <td>vijayvinu46@gmail.com <HiOutlinePencilAlt style={{ marginLeft: '10px' ,cursor:'pointer'}} /></td>
+                <td>vijayvinu46@gmail.com <HiOutlinePencilAlt style={{ marginLeft: '10px' ,cursor:'pointer',color:'#2874f0'}} /></td>
               </tr>
               <tr>
                 <td className='tds'>Phone No:</td>
-                <td>9876543210<HiOutlinePencilAlt style={{ marginLeft: '10px',cursor:'pointer' }} /></td>
+                <td>9876543210<HiOutlinePencilAlt style={{ marginLeft: '10px',cursor:'pointer',color:'#2874f0' }} /></td>
               </tr>
               <tr>
                 <td className='tds'>Delivery address:</td>
-                <td>Temporary address Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ullam id ducimus eum veritatis voluptate delectus eveniet aliquam nobis consequuntur.<HiOutlinePencilAlt style={{ marginLeft: '10px' ,cursor:'pointer'}} /></td>
+                <td>Temporary address Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ullam id ducimus eum veritatis voluptate delectus eveniet aliquam nobis consequuntur.<HiOutlinePencilAlt style={{ marginLeft: '10px' ,cursor:'pointer',color:'#2874f0'}} /></td>
               </tr>
             </tbody>
           </table>
