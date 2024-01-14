@@ -44,8 +44,8 @@ export default function Navbar() {
           </Link>
         </li>
         <li className="li" >
-          <Link to="/Profile" className="nav-links-rm"> <FaCircleUser style={{height:'100%'}}/>
-        
+          <Link to="/Profile" className="nav-links-rm"> 
+          <FaCircleUser style={{height:'20px',width:'20px'}}/>
           </Link>
         </li>
       </ul>

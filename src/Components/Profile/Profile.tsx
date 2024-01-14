@@ -47,10 +47,10 @@ export default function Profile() {
               </tr>
             </tbody>
           </table>
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', padding: '10px', width: '100' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', padding: '10px',marginTop:'20px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',cursor:'pointer' }}><BiSolidPackage style={{ width: '40px', height: '40px', color: '#2874f0' }} /><div style={{ fontWeight: 'bolder', fontSize: '12px' }}>Order</div></div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',cursor:'pointer'  }}><FaHeart style={{ width: '35px', height: '40px', color: 'red' }} /><div style={{ fontWeight: 'bolder', fontSize: '12px' }}>Wish List</div></div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',cursor:'pointer'  }}><RxGithubLogo style={{ width: '35px', height: '40px', color: 'gold' }} /><div style={{ fontWeight: 'bolder', fontSize: '12px' }}>About</div></div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',cursor:'pointer'  }}><RxGithubLogo style={{ width: '35px', height: '40px', color: '#000' }} /><div style={{ fontWeight: 'bolder', fontSize: '12px' }}>About</div></div>
           </div>
         </div>
 
