@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCartShopping,FaCircleUser } from "react-icons/fa6";
 import { React, useState } from "react";
 
 export default function Navbar() {
@@ -41,6 +41,11 @@ export default function Navbar() {
         <li className="li">
           <Link to="/Cart" className="nav-links-rm"> <FaCartShopping className="icon-cart" />
             Cart
+          </Link>
+        </li>
+        <li className="li" >
+          <Link to="/Profile" className="nav-links-rm"> <FaCircleUser style={{height:'100%'}}/>
+        
           </Link>
         </li>
       </ul>

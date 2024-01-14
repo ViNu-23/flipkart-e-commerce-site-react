@@ -41,7 +41,7 @@
 }
 .p-details {
   width: 300px;
-
+  border-radius: 8px;
   padding: 25px;
   display: flex;
   flex-direction: column;
