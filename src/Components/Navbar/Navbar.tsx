@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { FaCartShopping,FaCircleUser } from "react-icons/fa6";
 import { React, useState } from "react";
+import { useMediaQuery } from '@react-hook/media-query';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,6 +10,7 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
   return (
     <nav className="nav-bar">
@@ -45,7 +47,12 @@ export default function Navbar() {
         </li>
         <li className="li" >
           <Link to="/Profile" className="nav-links-rm"> 
-          <FaCircleUser style={{height:'20px',width:'20px'}}/>
+          {isSmallScreen&&(
+            <>Profile</>
+          )}
+          {!isSmallScreen&&(
+            <FaCircleUser style={{height:'20px',width:'20px'}}/>
+          )}
           </Link>
         </li>
       </ul>
