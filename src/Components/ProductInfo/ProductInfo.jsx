@@ -179,7 +179,7 @@ const ProductInfo = ({ data }) => {
       </div>
       <h5
         style={{
-          margin: "10px 30px",
+          margin: "10px 20px",
         }}
       >
         You might be interested in {product.company}
@@ -197,9 +197,9 @@ const ProductInfo = ({ data }) => {
           (item) =>
             item.company === product.company && item.title !== product.title
         ).map((item, index) => (
-          <div key={index} className="items-N">
-            <img src={item.img} alt={item.title} className="products-img" />
-            <span className="product-title">{item.title}</span>
+          <div key={index} className="items-N" style={{width:'170px'}}>
+            <img src={item.img} alt={item.title} className="products-img"  style={{width:'75px',marginTop:'8px'}}/>
+            <span className="product-title" style={{fontSize:'12px',textAlign:'justify'}}>{item.title}</span>
             <div className="star">
               <div className="stars">
                 <span className="rating">{item.star}</span>

@@ -3,7 +3,7 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-  padding: 50px;
+  padding: 50px 10px 50px 10px;
   flex-wrap: wrap;
 }
 .p-img {
