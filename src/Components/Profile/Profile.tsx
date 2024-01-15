@@ -53,7 +53,6 @@ export default function Profile() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',cursor:'pointer'  }}><RxGithubLogo style={{ width: '35px', height: '40px', color: '#000' }} /><div style={{ fontWeight: 'bolder', fontSize: '12px' }}>About Me</div></div>
           </div>
         </div>
-
       </div>
 
     </>
