@@ -66,7 +66,7 @@ const newOrder = {
   subtotal,
   shippingCost,
   totalCost,
-  timestamp: new Date().toISOString(),
+  timestamp: new Date().toISOString().split('T')[0],
 };
 
 // Add the new order to the orders array
@@ -82,7 +82,7 @@ setCartData({});
 // Clear the success message after 2 seconds
 setTimeout(() => {
   setSuccessMessage("");
-}, 2000);
+}, 6000);
 
 
     setCardholderName('')
@@ -95,9 +95,14 @@ setTimeout(() => {
   return (
     <>
       <Navbar />
-
+      
       {isCartEmpty ? (
         <div className="empty">
+          {successMessage&&(
+                    <div className="alert alert-success mt-2" role="alert">
+                    {successMessage}
+                  </div>
+                  )}
           <img
             src="https://rukminim2.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
             alt="empty-cart"
@@ -166,11 +171,7 @@ setTimeout(() => {
                       {errorMessage}
                     </div>
                   )}
-                  {successMessage&&(
-                    <div className="alert alert-success mt-2" role="alert">
-                    {successMessage}
-                  </div>
-                  )}
+                 
                   <div className="form-outline form-white mb-2">
                     <label className="form-label" htmlFor="typeName">
                       Card holders Name
