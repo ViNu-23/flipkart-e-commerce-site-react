@@ -1,5 +1,5 @@
 // import React from "react";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import "./Cart.css";
 import { Link } from "react-router-dom";
@@ -9,6 +9,13 @@ import dataProducts from "../../DataBase/Data";
 export default function Cart() {
   const [cartData, setCartData] = useState({});
 
+  //input validation for card details
+  const [cardholderName, setCardholderName] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
+  const [cvv, setCVV] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState('');
   useEffect(() => {
     // Load cart data from local storage when the component mounts
     const storedCartDataString = localStorage.getItem("cartData");
@@ -35,6 +42,56 @@ export default function Cart() {
 
   const shippingCost = 20.0;
   const totalCost = subtotal + shippingCost;
+
+  const handlePay = () => {
+    if (!cardholderName || !cardNumber || !expirationDate || !cvv) {
+      setErrorMessage("Please fill in all fields");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 2000);
+      return;
+    }else{
+      setSuccessMessage("Payment successful!");
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 2000);
+
+      // Create an 'orders' array in local storage
+// Create an orders array or retrieve existing orders from local storage
+const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+// Create a new order object with the required details
+const newOrder = {
+  items: cartData,
+  subtotal,
+  shippingCost,
+  totalCost,
+  timestamp: new Date().toISOString(),
+};
+
+// Add the new order to the orders array
+orders.push(newOrder);
+
+// Update the local storage with the updated orders array
+localStorage.setItem('orders', JSON.stringify(orders));
+
+// Clear the cart data after successful payment
+localStorage.removeItem('cartData');
+setCartData({});
+
+// Clear the success message after 2 seconds
+setTimeout(() => {
+  setSuccessMessage("");
+}, 2000);
+
+
+    setCardholderName('')
+    setCardNumber('')
+    setExpirationDate('')
+    setCVV('')
+  }
+
+  };
   return (
     <>
       <Navbar />
@@ -73,7 +130,7 @@ export default function Cart() {
                     </span>
                   </div>
                   <div className="qty">
-                    {quantity}  X  ${price}
+                    {quantity} X ${price}
                   </div>
                   <div className="price-item">${price * quantity}</div>
                   <div>
@@ -104,9 +161,19 @@ export default function Cart() {
                 />
 
                 <form className="mt-2" autoComplete="off">
+                  {errorMessage && (
+                    <div className="alert alert-danger mt-2" role="alert">
+                      {errorMessage}
+                    </div>
+                  )}
+                  {successMessage&&(
+                    <div className="alert alert-success mt-2" role="alert">
+                    {successMessage}
+                  </div>
+                  )}
                   <div className="form-outline form-white mb-2">
                     <label className="form-label" htmlFor="typeName">
-                      Cardholder's Name
+                      Card holders Name
                     </label>
                     <input
                       type="text"
@@ -114,6 +181,8 @@ export default function Cart() {
                       className="form-control form-control-sm"
                       size="17"
                       placeholder="Cardholder's Name"
+                      value={cardholderName}
+                      onChange={(e) => setCardholderName(e.target.value)}
                     />
                   </div>
 
@@ -130,6 +199,8 @@ export default function Cart() {
                       minLength="19"
                       maxLength="19"
                       autoComplete="off"
+                      value={cardNumber}
+                      onChange={(e) => setCardNumber(e.target.value)}
                     />
                   </div>
 
@@ -147,6 +218,8 @@ export default function Cart() {
                           size="7"
                           minLength="7"
                           maxLength="7"
+                          value={expirationDate}
+                          onChange={(e) => setExpirationDate(e.target.value)}
                         />
                       </div>
                     </div>
@@ -162,6 +235,8 @@ export default function Cart() {
                           minLength="3"
                           maxLength="3"
                           autoComplete="off"
+                          value={cvv}
+                          onChange={(e) => setCVV(e.target.value)}
                         />
                       </div>
                     </div>
@@ -185,14 +260,13 @@ export default function Cart() {
                   <p className="mb-1">${totalCost}</p>
                 </div>
 
-                <div className="pay-btns">
+                <div className="pay-btns" onClick={handlePay}>
                   <button
                     type="button"
                     className="btn btn-pay btn-block btn-md"
                   >
                     Pay
                   </button>
-
                   <span className="total-dlv">${totalCost}</span>
                 </div>
               </div>
