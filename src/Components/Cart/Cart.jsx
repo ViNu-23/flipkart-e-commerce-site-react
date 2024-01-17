@@ -73,9 +73,9 @@ export default function Cart() {
                     </span>
                   </div>
                   <div className="qty">
-                   Qty {quantity} X  ${price}
+                    {quantity}  X  ${price}
                   </div>
-                  <div className="price-item">Total: ${price * quantity}</div>
+                  <div className="price-item">${price * quantity}</div>
                   <div>
                     <button
                       className="dlt-product"
