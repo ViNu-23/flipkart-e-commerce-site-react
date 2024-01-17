@@ -39,6 +39,11 @@ export default function Profile() {
   useEffect(() => {
   }, [userDetails]);
 
+  //cancel edit option
+  const handleCancel = () => {
+    // Exit edit mode
+    setIsEditing(false);
+  };
   return (
     <>
       <Navbar />
@@ -129,13 +134,14 @@ export default function Profile() {
                 <tr>
                   <td colSpan={2} style={{ textAlign: 'center', paddingTop: '10px' }}>
                     <button onClick={handleSave}>Save</button>
+                    <button onClick={handleCancel} style={{ marginLeft: '10px' }}>Cancel</button>
                   </td>
                 </tr>
               )}
               
             </tbody>
           </table>
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', padding: '10px',marginTop:'20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', padding: '10px',marginTop:'10px' }}>
            
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',cursor:'pointer' }}><PiPackageFill style={{ width: '30px', height: '30px', color: '#2874f0' }} /><div style={{ fontWeight: 'bolder', fontSize: '12px' }}>My Orders</div></div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',cursor:'pointer'  }}><FaHeart style={{ width: '30px', height: '30px', color: 'red' }} /><div style={{ fontWeight: 'bolder', fontSize: '12px' }}>Wish List</div></div>
