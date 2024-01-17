@@ -13,7 +13,7 @@ export default function Login() {
   const [userEmail, setUserEmail] = useState('');
   const [generatedOTP, setGeneratedOTP] = useState('');
 
-  const emailInputRef = useRef<HTMLInputElement>(null);
+  const phoneNoInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
   const otpInputRef = useRef<HTMLInputElement>(null);
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
@@ -24,24 +24,18 @@ export default function Login() {
     setGeneratedOTP(otp.toString());
     return otp;
   };
-  const isEmail = (input) => {
-    // Regex pattern 
-    const emailPattern = /^[a-zA-Z0-9._-]+@gmail\.com$/;
-    const phonePattern = /^\d{10}$/;
 
-    return emailPattern.test(input) || phonePattern.test(input);
-  };
   const inputField = () => {
     if (emailField) {
-      const userEmailValue = userEmail || (emailInputRef.current && emailInputRef.current.value);
+      const userEmailValue = userEmail || (phoneNoInputRef.current && phoneNoInputRef.current.value);
 
-      if (isEmail(userEmailValue)) {
+      if ((userEmailValue?.length==10)) {
         setEmailField(false);
         setOtpField(true);
         setButtonText('Validate OTP');
         generateRandomOTP();
       } else {
-        toast.error('Invalid format');
+        toast.error('Invalid Contact Details');
       }
     } else if (otpField) {
       const enteredOTP = otpInputRef.current?.value;
@@ -64,7 +58,7 @@ export default function Login() {
         return;
       }
       const userDetails = {
-        email: userEmail,
+        phoneno: userEmail,
         password: userPassword,
       };
 
@@ -155,16 +149,17 @@ export default function Login() {
               {emailField && (
                 <div className='form-floating mb-3' style={{ marginTop: '20px' }}>
                   <input
-                    type='text'
+                    type='number'
                     className='form-control'
                     id='floatingInput'
-                    placeholder='name@example.com'
-                    ref={emailInputRef}
+                    autoComplete='off'
+                    
+                    ref={phoneNoInputRef}
                     value={userEmail}
                     onChange={(e) => setUserEmail(e.target.value)}
                   />
                   <label htmlFor='floatingInput'>
-                    Email Address / Phone Number
+                     Phone Number
                   </label>
                 </div>
               )}
@@ -175,7 +170,7 @@ export default function Login() {
                     type='number'
                     className='form-control'
                     id='floatingInput'
-                    placeholder='name@example.com'
+                    autoComplete='off'
                     ref={otpInputRef}
                   />
                   <label htmlFor='floatingInput'>Enter OTP</label>
