@@ -51,7 +51,7 @@ export default function Cart() {
       }, 2000);
       return;
     }else{
-      setSuccessMessage("Payment successful!");
+      setSuccessMessage("order Placed Successful!");
     setTimeout(() => {
       setSuccessMessage("");
     }, 2000);
