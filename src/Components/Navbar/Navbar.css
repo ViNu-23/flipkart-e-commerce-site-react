@@ -11,6 +11,7 @@
   font-weight: bold;
   padding: 5px 20px 5px 20px;
   color: #fff;
+  letter-spacing: 2px;
 }
 .nav-links-rm:hover {
   border-radius: 15px;
