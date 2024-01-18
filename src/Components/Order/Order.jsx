@@ -1,8 +1,9 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { FaCircleInfo } from "react-icons/fa6";
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal } from "react-bootstrap";
+import { IoMdHelpCircle } from "react-icons/io";
+
 const Order = () => {
-   
   const [orders, setOrders] = useState(
     JSON.parse(localStorage.getItem("orders")) || []
   );
@@ -116,23 +117,143 @@ const Order = () => {
                     }}
                     type="button"
                     className="btn btn-primary btn-sm"
-                   onClick={()=>handleInfo(index)}
+                    onClick={() => handleInfo(index)}
                   >
                     <FaCircleInfo style={{ height: "18px", width: "18px" }} />
                   </button>
                   <Modal show={modalShow} onHide={closeModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Deliver Status</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>This is a Bootstrap modal example.</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button  className=" btn-info" onClick={closeModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Delivery Status</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <div>
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <div
+                            style={{
+                              height: "15px",
+                              width: "15px",
+                              background: "#68D391",
+                              borderRadius: "50%",
+                            }}
+                          />
+                          <div
+                            style={{
+                              fontSize: "smaller",
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div style={{ margin: "0px 8px" }}>Ordered</div>
+                            <div style={{ fontSize: "10px" }}>Date: {new Date(order.timestamp).toLocaleDateString(('en-GB'))}</div>
+                            
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            height: "20px",
+                            width: "4px",
+                            background: "#68D391",
+                            margin: "2px 6px",
+                            borderRadius: "4px",
+                          }}
+                        />
+
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <div
+                            style={{
+                              height: "15px",
+                              width: "15px",
+                              border: "2px solid #CBD5E0",
+                              borderRadius: "50%",
+                            }}
+                          />
+                          <div
+                            style={{
+                              fontSize: "smaller",
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div style={{ margin: "0px 8px" }}>Shipped</div>
+                            <div style={{ fontSize: "10px" }}>
+                              Expected Date: {new Date(new Date(order.timestamp).getTime() + 24 * 60 * 60 * 1000).toLocaleDateString(('en-GB'))}
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            height: "20px",
+                            width: "4px",
+                            background: "#EDF2F7",
+                            margin: "2px 6px",
+                            borderRadius: "4px",
+                          }}
+                        />
+
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <div
+                            style={{
+                              height: "15px",
+                              width: "15px",
+                              border: "2px solid #CBD5E0",
+                              borderRadius: "50%",
+                            }}
+                          />
+                          <div
+                            style={{
+                              fontSize: "smaller",
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div style={{ margin: "0px 8px" }}>Dispatched</div>
+                            <div style={{ fontSize: "10px" }}>
+                              Expected Date: {new Date(new Date(order.timestamp).getTime() + 2*24 * 60 * 60 * 1000).toLocaleDateString(('en-GB'))}
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            height: "20px",
+                            width: "4px",
+                            background: "#EDF2F7",
+                            margin: "2px 6px",
+                            borderRadius: "4px",
+                          }}
+                        />
+
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <div
+                            style={{
+                              height: "15px",
+                              width: "15px",
+                              border: "2px solid#CBD5E0",
+                              borderRadius: "50%",
+                            }}
+                          />
+                          <div
+                            style={{
+                              fontSize: "smaller",
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div style={{ margin: "0px 8px" }}>Delivered</div>
+                            <div style={{ fontSize: "10px" }}>
+                              Expected Date: {new Date(new Date(order.timestamp).getTime() + 3*24 * 60 * 60 * 1000).toLocaleDateString(('en-GB'))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </Modal.Body>
+                    <Modal.Footer style={{display:'flex',justifyContent:'space-between'}}>
+                  <span style={{fontSize:'small'}}>Help Centre <IoMdHelpCircle style={{height:'15px',width:'15px',color:'#2874f0'}}/></span>
+
+                      <Button style={{backgroundColor:'#2874f0',padding:'4px 8px'}} onClick={closeModal}>
+                        Close
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                   <button
                     type="button"
                     className="btn btn-danger btn-sm"
