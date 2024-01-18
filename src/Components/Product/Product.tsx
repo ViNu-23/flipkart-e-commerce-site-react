@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Product.css';
 import data from '../../DataBase/Data';
 import { Link } from 'react-router-dom';
+import { FaHeart } from "react-icons/fa";
 export default function Product() {
 
   const dataProducts = data;
@@ -10,6 +11,8 @@ export default function Product() {
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('');
+  const [wishList, setWishList] = useState({});
+  const [alertMessages, setAlertMessages] = useState({});
 
   const filteredProducts = dataProducts.filter((item) => {
     const brandNameFilter = item.title.toLowerCase().includes(searchBrand.toLowerCase());
@@ -48,6 +51,47 @@ export default function Product() {
     setSearchBrand('');
   };
 
+  useEffect(() => {
+    const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || {};
+    setWishList(storedWishlist);
+  }, []);
+
+  const handleWishlist = (item) => {
+    const itemId = item.id;
+ 
+    setWishList((prevWishlist) => {
+      const updatedWishlist = { ...prevWishlist };
+  
+      // Toggle item in the wishlist
+      if (!updatedWishlist[itemId]) {
+        updatedWishlist[itemId] = { ...item };
+      } else {
+        delete updatedWishlist[itemId];
+      }
+  
+      // Update local storage with the new wishlist
+      localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+  
+      return updatedWishlist;
+    });
+  
+    setAlertMessages((prevMessages) => ({
+      ...prevMessages,
+      [itemId]: !wishList[itemId] ? 'Item added to wishlist' : 'Item removed from wishlist',
+      
+    }));
+  
+    // Clear the alert message after 3 seconds
+    setTimeout(() => {
+      setAlertMessages((prevMessages) => {
+        const updatedMessages = { ...prevMessages };
+        delete updatedMessages[itemId];
+        return updatedMessages;
+      });
+    }, 3000);
+  };
+  
+  
   return (
     <>
       <Navbar />
@@ -210,6 +254,7 @@ export default function Product() {
                 <span className='new-price'> ${item.newPrice}</span>
               </div>
 
+              <div style={{display:'flex',justifyContent:'space-evenly',width:'100%',alignItems:'center'}}>
               <Link to={`/Product-Info/${item.id}`}>
                 <button
                   type='button'
@@ -218,6 +263,18 @@ export default function Product() {
                   Buy Now
                 </button>
               </Link>
+              <button
+              onClick={() => handleWishlist(item)}
+              className='wishlist-heart'
+                  type='button'
+                  style={{border:'none',background:'none',cursor:'pointer'}}
+                >
+                  <FaHeart style={{height:'22px',width:'22px',color: wishList[item.id] ? 'red' : ''}}/>
+                </button>
+              </div>
+              {alertMessages[item.id] && (
+            <div style={{ textAlign: 'center', marginTop: '5px',fontSize:'smaller' }}>{alertMessages[item.id]}</div>
+          )}
             </div>
           ))}
         </div>

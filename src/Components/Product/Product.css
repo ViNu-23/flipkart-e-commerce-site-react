@@ -139,3 +139,11 @@ input {
     font-size: x-small;
   }
 }
+.wishlist-heart:hover{
+    transform: scale(1.2);
+  
+}
+.wishlist-heart{
+  transition: transform 0.3s ease-in-out;
+color: #E2E8F0;
+}
