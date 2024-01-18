@@ -187,30 +187,7 @@ h4 {
   color: #ffc200;
 }
 
-.footer-two {
-  display: flex;
-  flex-direction: row;
-  background-color: #212121;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  border-top: 1px solid #fff;
-  padding: 15px;
-}
-.c4gehN {
-  margin-bottom: 12px;
-}
-.payment {
-  width: 450px;
-}
-@media (max-width: 768px) {
-  .footer-two {
-    flex-direction: column;
-  }
-  .payment {
-    width: 335px;
-    margin-left: -20px;
-  }
-  span {
-    margin-left: -20px;
-  }
-}
+
+
+
+

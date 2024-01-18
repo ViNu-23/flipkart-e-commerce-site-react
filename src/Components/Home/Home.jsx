@@ -1,12 +1,16 @@
 import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 import { Carousel } from "react-bootstrap";
-import { FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import data from "../../DataBase/Data";
 import { Link } from "react-router-dom";
+import { FaShopLock } from "react-icons/fa6";
+import { RiAdvertisementFill } from "react-icons/ri";
+import { FaGift } from "react-icons/fa";
+import { IoMdHelpCircle } from "react-icons/io";
+import { FaFacebookSquare } from "react-icons/fa";
 
 export default function Home() {
   const imageLinks = [
@@ -91,16 +95,16 @@ export default function Home() {
       </div>
 
       <Carousel indicators={false} className="carousel">
-        {imageLinks.map((imageLink, index) => (
-          <Carousel.Item key={index}>
-            <img
-              className="d-block w-100"
-              src={imageLink}
-              alt={`Slide ${index + 1}`}
-            />
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      {imageLinks.map((imageLink, index) => (
+        <Carousel.Item key={index}>
+          <img
+            className="d-block w-100 custom-img"
+            src={imageLink}
+            alt={`Slide ${index + 1}`}
+          />
+        </Carousel.Item>
+      ))}
+    </Carousel>
 
       <h2>
         Recommended <FaCircleChevronRight className="left-arrow" />
@@ -170,70 +174,52 @@ export default function Home() {
             <h4>Connect with Us</h4>
             <ul>
               <li>
-                <FaFacebook /> Facebook
+                <FaFacebookSquare style={{height:'18px',width:'18px',marginRight:'5px'}} /> Facebook
               </li>
               <li>
-                <BsTwitterX /> Twitter
+                <BsTwitterX style={{height:'16px',width:'16px',marginRight:'5px'}}/> Twitter
               </li>
               <li>
-                <SiInstagram /> Instagram
+                <SiInstagram style={{height:'16px',width:'16px',marginRight:'5px'}}/> Instagram
               </li>
             </ul>
           </div>
         </div>
-        <div className="footer-two">
-          <div className="c4gehN">
-            <img
-              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/sell-image-9de8ef.svg"
-              alt="Become a Seller"
-              width="13"
-              height="12"
-            />
+        
 
-            <span>Become a Seller</span>
-          </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #fff',padding: '15px' }}>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <FaShopLock style={{ color: '#FFC200' }} />
+    <span style={{ marginLeft: '5px' }}>Become a Seller</span>
+  </div>
 
-          <div className="c4gehN">
-            <img
-              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-image-866c0b.svg"
-              alt="Advertise"
-              width="14"
-              height="14"
-            />
+  <div className="c4gehN" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <RiAdvertisementFill style={{ color: '#FFC200' }} />
+    <span style={{ marginLeft: '5px' }}>Advertise</span>
+  </div>
 
-            <span>Advertise</span>
-          </div>
+  <div className="c4gehN" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <FaGift style={{ color: '#FFC200' }} />
+    <span style={{ marginLeft: '5px' }}>Gift Cards</span>
+  </div>
 
-          <div className="c4gehN">
-            <img
-              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/gift-cards-image-d7ff24.svg"
-              alt="Gift Cards"
-              width="13"
-              height="13"
-            />
-            <span>Gift Cards</span>
-          </div>
+  <div className="c4gehN" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <IoMdHelpCircle style={{ color: '#FFC200' }} />
+    <span style={{ marginLeft: '5px' }}>Help Center</span>
+  </div>
+</div>
 
-          <div className="c4gehN">
-            <img
-              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/help-centre-image-c4ace8.svg"
-              alt="Help Center"
-              width="13"
-              height="13"
-            />
-            <span>Help Center</span>
-          </div>
-          <div className="c4gehN">
+
+
+        <div style={{display:'flex',justifyContent:'center',width:'100%',padding:'10px'}}>
             <img
               src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
               alt="Payment methods"
-              className="payment"
+              style={{width:'100%'}}
             />
           </div>
-        </div>
-
         <div className="footer-bottom">
-          <p>&copy; 2023 Your E-Commerce Store. All Rights Reserved.</p>
+          <p>&copy; 2023 Your E-Commerce Store. All Rights Reserved. Build with ❤️ by <Link style={{textDecoration:'none',color:'#FFC200'}} to={"https://github.com/ViNu-23"}>ViNu23</Link></p>
         </div>
       </footer>
     </>
