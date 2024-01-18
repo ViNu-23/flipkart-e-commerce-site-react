@@ -7,6 +7,7 @@ const Order = () => {
   const [orders, setOrders] = useState(
     JSON.parse(localStorage.getItem("orders")) || []
   );
+  const [cancelorder, setCancelOrder] = useState("");
 
   const handleCancelOrder = (index) => {
     // Create a copy of the orders array
@@ -18,6 +19,7 @@ const Order = () => {
     // Update the state and local storage
     setOrders(updatedOrders);
     localStorage.setItem("orders", JSON.stringify(updatedOrders));
+    setCancelOrder("Order cancelled");
   };
   const [modalShow, setModalShow] = useState(false);
 
@@ -33,6 +35,25 @@ const Order = () => {
       <div style={{ alignItems: "center", margin: "0px 0px 15px 0px" }}>
         Order History
       </div>
+      {cancelorder && (
+        <div
+          className="alert alert-info"
+          role="alert"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          {cancelorder}{" "}
+          <button
+            type="button"
+            className="btn-close"
+            aria-label="Close"
+            onClick={()=>{
+              setCancelOrder('')
+            }}
+
+          ></button>
+        </div>
+      )}
+
       {orders.length === 0 ? (
         <p>No orders yet.</p>
       ) : (
@@ -144,8 +165,12 @@ const Order = () => {
                             }}
                           >
                             <div style={{ margin: "0px 8px" }}>Ordered</div>
-                            <div style={{ fontSize: "10px" }}>Date: {new Date(order.timestamp).toLocaleDateString(('en-GB'))}</div>
-                            
+                            <div style={{ fontSize: "10px" }}>
+                              Date:{" "}
+                              {new Date(order.timestamp).toLocaleDateString(
+                                "en-GB"
+                              )}
+                            </div>
                           </div>
                         </div>
                         <div
@@ -176,7 +201,11 @@ const Order = () => {
                           >
                             <div style={{ margin: "0px 8px" }}>Shipped</div>
                             <div style={{ fontSize: "10px" }}>
-                              Expected Date: {new Date(new Date(order.timestamp).getTime() + 24 * 60 * 60 * 1000).toLocaleDateString(('en-GB'))}
+                              Expected Date:{" "}
+                              {new Date(
+                                new Date(order.timestamp).getTime() +
+                                  24 * 60 * 60 * 1000
+                              ).toLocaleDateString("en-GB")}
                             </div>
                           </div>
                         </div>
@@ -208,7 +237,11 @@ const Order = () => {
                           >
                             <div style={{ margin: "0px 8px" }}>Dispatched</div>
                             <div style={{ fontSize: "10px" }}>
-                              Expected Date: {new Date(new Date(order.timestamp).getTime() + 2*24 * 60 * 60 * 1000).toLocaleDateString(('en-GB'))}
+                              Expected Date:{" "}
+                              {new Date(
+                                new Date(order.timestamp).getTime() +
+                                  2 * 24 * 60 * 60 * 1000
+                              ).toLocaleDateString("en-GB")}
                             </div>
                           </div>
                         </div>
@@ -240,16 +273,40 @@ const Order = () => {
                           >
                             <div style={{ margin: "0px 8px" }}>Delivered</div>
                             <div style={{ fontSize: "10px" }}>
-                              Expected Date: {new Date(new Date(order.timestamp).getTime() + 3*24 * 60 * 60 * 1000).toLocaleDateString(('en-GB'))}
+                              Expected Date:{" "}
+                              {new Date(
+                                new Date(order.timestamp).getTime() +
+                                  3 * 24 * 60 * 60 * 1000
+                              ).toLocaleDateString("en-GB")}
                             </div>
                           </div>
                         </div>
                       </div>
                     </Modal.Body>
-                    <Modal.Footer style={{display:'flex',justifyContent:'space-between'}}>
-                  <span style={{fontSize:'small'}}>Help Centre <IoMdHelpCircle style={{height:'15px',width:'15px',color:'#2874f0'}}/></span>
+                    <Modal.Footer
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <span style={{ fontSize: "small" }}>
+                        Help Centre{" "}
+                        <IoMdHelpCircle
+                          style={{
+                            height: "15px",
+                            width: "15px",
+                            color: "#2874f0",
+                          }}
+                        />
+                      </span>
 
-                      <Button style={{backgroundColor:'#2874f0',padding:'4px 8px'}} onClick={closeModal}>
+                      <Button
+                        style={{
+                          backgroundColor: "#2874f0",
+                          padding: "4px 8px",
+                        }}
+                        onClick={closeModal}
+                      >
                         Close
                       </Button>
                     </Modal.Footer>

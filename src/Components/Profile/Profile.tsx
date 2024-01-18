@@ -149,8 +149,8 @@ const[showWishlist,setShowWishList]=useState(false);
               {isEditing && (
                 <tr>
                   <td colSpan={2} style={{ textAlign: 'center', paddingTop: '10px' }}>
-                    <button onClick={handleSave}>Save</button>
-                    <button onClick={handleCancel} style={{ marginLeft: '10px' }}>Cancel</button>
+                    <button style={{background:'#68D391'}} type="button" className="btn  btn-sm" onClick={handleSave}>Save</button>
+                    <button type="button" className="btn  btn-sm" onClick={handleCancel} style={{ marginLeft: '10px',background:'#CBD5E0' }}>Cancel</button>
                   </td>
                 </tr>
               )}
