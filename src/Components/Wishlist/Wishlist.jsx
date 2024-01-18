@@ -1,5 +1,6 @@
 import  { useState, useEffect } from 'react';
 import { FaHeartCircleXmark } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState({});
@@ -61,8 +62,10 @@ const Wishlist = () => {
                 {/* Add other details as needed */}
               </div>
              <div style={{display:'flex',width:'100%',justifyContent:'space-between'}}>
+             <Link to={`/Product-Info/${item.id}`}>
              <button style={{background:'#EBF8FF'}} type="button" className="btn btn-sm">Buy</button>
-              <button style={{background:'#F7FAFC'}} type="button" className="btn btn-sm" onClick={() => removeFromWishlist(item.id)}>
+             </Link>
+              <button style={{background:'#FFF5F5'}} type="button" className="btn btn-sm" onClick={() => removeFromWishlist(item.id)}>
                 <FaHeartCircleXmark style={{height:'20px',width:'20px',color:'red'}}/></button>
              </div>
 
