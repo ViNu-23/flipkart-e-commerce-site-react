@@ -8,7 +8,7 @@
   top: 0px;
   left: 0px;
   height: 100vh;
-  padding: 90px 30px 90px 30px;
+  padding: 80px 30px 90px 30px;
 }
 .sort-menu {
   font-weight: bold;
@@ -39,7 +39,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-top: 70px;
 }
 .previews-price {
   text-decoration: line-through;
@@ -54,9 +54,9 @@
   transition: transform 0.3s ease-in-out;
 }
 .items-N {
-  padding: 14px;
+  padding: 10px;
   margin: 8px;
-  width: 200px;
+  width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
