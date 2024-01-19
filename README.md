@@ -11,8 +11,8 @@
 ![FireShot Capture 034 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/45093d26-0aec-4166-95e4-b8bdebc9f3ac)
 ![FireShot Capture 035 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/63e720a1-8a3e-4455-b0c3-9b2630237a0c)
 ![FireShot Capture 036 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/c71de515-9f6a-4213-9a01-9cb8e0753feb)
-![FireShot Capture 038 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/d63b70df-2831-4466-8ea8-adf234b31dc2)
 ![FireShot Capture 042 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/cc19b541-dbc3-4a8a-9969-945ca375bb75)
+![FireShot Capture 038 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/d63b70df-2831-4466-8ea8-adf234b31dc2)
 ![FireShot Capture 039 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/14430619-7a8d-4b49-a058-1f96ac53e50c)
 
 
