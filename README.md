@@ -3,25 +3,17 @@
 ## E_Commerce_Website Using React (Responsive)
 
 ## Preview
-<img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/8fab3e8d-a0c5-4927-bb27-141777a1f357" width="400">
-<img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/35a636a6-a992-4f8b-a87f-fec7de70c5c8" width="250">
-<img src='https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/89b4576b-1510-4f58-bd2f-2fec07bce420' width="400">
-<img src='https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/1fafb10c-a0ce-4f86-ba07-9290e685fb1e' width="400">
-<img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/ea2167e1-3fb2-4ea8-bf0c-1c905f5a5409" width="400">
-<img src="https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/8decda4d-5256-40e3-8323-d8c14ed40ead" width="400">
+![FireShot Capture 025 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/f65727ca-b0e2-4b27-b8ea-7d0b09ba54ea)
+![FireShot Capture 027 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/c9fd69dc-f0bb-4dac-8b70-dc597c89c464)
+![FireShot Capture 029 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/5ad0cb62-1277-4f87-8db1-4a14235131bc)
+![FireShot Capture 030 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/9c71c7ce-f995-46ed-8477-b2f03934309a)
+![FireShot Capture 032 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/c2eb1cc5-820d-401c-b38d-96672ec941a7)
+![FireShot Capture 034 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/45093d26-0aec-4166-95e4-b8bdebc9f3ac)
+![FireShot Capture 035 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/63e720a1-8a3e-4455-b0c3-9b2630237a0c)
+![FireShot Capture 036 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/c71de515-9f6a-4213-9a01-9cb8e0753feb)
+![FireShot Capture 038 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/d63b70df-2831-4466-8ea8-adf234b31dc2)
+![FireShot Capture 039 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/14430619-7a8d-4b49-a058-1f96ac53e50c)
 
-
-## Skills Obtained
-ReactJs<br>
-Bootstrap<br>
-Pure CSS<br>
-Routers<br>
-ReactDom<br>
-Link<br>
-Conditional render<br>
-Use-state/Use-effect<br>
-Local Storage<br>
-Responsive
 
 ## Disclaimer:
 
