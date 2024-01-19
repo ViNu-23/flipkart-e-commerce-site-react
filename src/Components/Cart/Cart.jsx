@@ -50,24 +50,52 @@ export default function Cart() {
         setErrorMessage("");
       }, 2000);
       return;
-    }else{
-      setSuccessMessage("Order Placed Successfully!");
+    }
+
+     // Validate card number (Simple check for 16 digits):
+     if (!/^\d{16}$/.test(cardNumber)) {
+      setErrorMessage("Invalid card number");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 2000);
+      return;
+    }
+
+    // Validate expiration date (simple check for the format MM/YYYY):
+    if (!/^(0[1-9]|1[0-2])\/\d{4}$/.test(expirationDate)) {
+      setErrorMessage("Invalid expiration date. Please use MM/YYYY format");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 2000);
+      return;
+    }
+
+    // Validate CVV (simple check for 3 digits):
+    if (!/^\d{3}$/.test(cvv)) {
+      setErrorMessage("Invalid CVV. It should be a 3-digit number");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 2000);
+      return;
+    }
+
+    // If everything is 👌, proceed with the payment logic:
+    setSuccessMessage("Order Placed Successfully!");
     setTimeout(() => {
       setSuccessMessage("");
     }, 2000);
 
-      // Create an 'orders' array in local storage
-// Create an orders array or retrieve existing orders from local storage
-const orders = JSON.parse(localStorage.getItem('orders')) || [];
+    // Create an 'orders' array in local storage
+    const orders = JSON.parse(localStorage.getItem('orders')) || [];
 
-// Create a new order object with the required details
-const newOrder = {
-  items: cartData,
-  subtotal,
-  shippingCost,
-  totalCost,
-  timestamp: new Date().toISOString().split('T')[0],
-};
+    // Create a new order object with the required details
+    const newOrder = {
+      items: cartData,
+      subtotal,
+      shippingCost,
+      totalCost,
+      timestamp: new Date().toISOString().split('T')[0],
+    };
 
 // Add the new order to the orders array
 orders.push(newOrder);
@@ -84,15 +112,15 @@ setTimeout(() => {
   setSuccessMessage("");
 }, 6000);
 
+// Clear input fields
+setCardholderName("");
+setCardNumber("");
+setExpirationDate("");
+setCVV("");
 
-    setCardholderName('')
-    setCardNumber('')
-    setExpirationDate('')
-    setCVV('')
-  }
+};
 
-  };
-  return (
+return (
     <>
       <Navbar />
       
