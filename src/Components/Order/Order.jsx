@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaCircleInfo } from "react-icons/fa6";
 import { Button, Modal } from "react-bootstrap";
 import { IoMdHelpCircle } from "react-icons/io";
+import { PiPackageFill } from "react-icons/pi";
+
 
 const Order = () => {
   const [orders, setOrders] = useState(
@@ -32,9 +34,7 @@ const Order = () => {
   };
   return (
     <div style={{ margin: "18px" }}>
-      <div style={{ alignItems: "center", margin: "0px 0px 15px 0px" }}>
-        Order History
-      </div>
+      <h2 style={{margin:'20px'}}>Order History  <PiPackageFill style={{marginBottom:'2px'}}/> </h2>
       {cancelorder && (
         <div
           className="alert alert-info"

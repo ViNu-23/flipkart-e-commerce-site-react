@@ -345,7 +345,7 @@ const data = [
     category: "flats",
   },
   {
-    id: 28,
+    id: 29,
     img: " https://m.media-amazon.com/images/I/51XPXEhM0BL._AC_UL480_FMwebp_QL65_.jpg",
     title: "Adidas Prom Bridal",
     star: <AiFillStar className="rating-star" />,
@@ -357,7 +357,7 @@ const data = [
     category: "sneakers",
   },
   {
-    id: 29,
+    id: 30,
     img: " https://m.media-amazon.com/images/I/61BwndehQ-L._AC_UL480_FMwebp_QL65_.jpg",
     title: "Womens Smashic Shoe",
     star: <AiFillStar className="rating-star" />,
@@ -369,7 +369,7 @@ const data = [
     category: "sneakers",
   },
   {
-    id: 30,
+    id: 31,
     img: " https://m.media-amazon.com/images/I/51SymQudSKL._SY695_.jpg",
     title: "Smashic Shoe",
     star: <AiFillStar className="rating-star" />,

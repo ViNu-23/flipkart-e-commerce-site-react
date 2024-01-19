@@ -1,6 +1,7 @@
 import  { useState, useEffect } from 'react';
 import { FaHeartCircleXmark } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import { FaHeart } from "react-icons/fa";
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState({});
@@ -27,7 +28,7 @@ const Wishlist = () => {
   };
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-      <h2 style={{margin:'4px'}}>Wishlist</h2>
+      <h2 style={{margin:'4px'}}>Wishlist  <FaHeart style={{marginBottom:'2px'}}/> </h2>
       {alertMessage && (
         <div className="alert alert-info" role="alert">
           {alertMessage}
