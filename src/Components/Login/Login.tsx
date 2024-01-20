@@ -115,7 +115,7 @@ const inputField = () => {
                   fontSize: '25px',
                 }}
               >
-                Login
+                Sign up
               </span>
               <span>
                 Get access to your Orders, Wishlist and Recommendations
