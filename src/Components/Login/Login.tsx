@@ -241,6 +241,7 @@ const inputField = () => {
                 <span style={{fontSize:'small',textAlign:'center'}}>Already have an account? <span style={{color:'#2874f0',fontWeight:'bold',cursor:'pointer'}}>Log in</span></span>
                 )}
                 {/* add log-in for existing users here */}
+                
               </div>
             </div>
           </form>
