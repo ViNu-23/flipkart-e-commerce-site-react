@@ -3,7 +3,7 @@
 ## E_Commerce_Website Using React (Responsive)
 
 ## Preview
-![FireShot Capture 025 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/f65727ca-b0e2-4b27-b8ea-7d0b09ba54ea)
+![FireShot Capture 044 - Shopping cart - localhost](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/ec1b2e4d-8428-4938-8be8-0b33818e5227)
 ![FireShot Capture 027 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/d9d093f8-d8d4-4588-ad29-89cd830e5051)
 ![FireShot Capture 029 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/5ad0cb62-1277-4f87-8db1-4a14235131bc)
 ![FireShot Capture 030 - Shopping cart - flipkart-e-commerce-site-react-p7xd vercel app](https://github.com/ViNu-23/flipkart-e-commerce-site-react/assets/59360964/9c71c7ce-f995-46ed-8477-b2f03934309a)
