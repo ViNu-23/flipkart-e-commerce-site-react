@@ -7,6 +7,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 export default function Login() {
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Request OTP');
+  //phone number-->emailField
   const [emailField, setEmailField] = useState(true);
   const [otpField, setOtpField] = useState(false);
   const [passField, setPassField] = useState(false);
@@ -24,7 +25,7 @@ export default function Login() {
     setGeneratedOTP(otp.toString());
     return otp;
   };
-
+//emailField replaced with phone Number but variable name not changed
 const inputField = () => {
   if (emailField) {
     const userEmailValue = userEmail || (phoneNoInputRef.current && phoneNoInputRef.current.value);
