@@ -214,8 +214,6 @@ const inputField = () => {
 
                   <span style={{
                     fontSize: '12px',
-                    padding: isSmallScreen ? '20px' : '0px',
-
                   }}>
                     By continuing, you agree to Flipkart's Terms of Use and Privacy
                     Policy.
@@ -239,7 +237,10 @@ const inputField = () => {
                 >
                   {buttonText}
                 </button>
-                <span style={{fontSize:'small',textAlign:'center'}}>Already have an account? <span style={{color:'#2874f0',fontWeight:'bold'}}>Log in</span></span>
+                {emailField&&(
+                <span style={{fontSize:'small',textAlign:'center'}}>Already have an account? <span style={{color:'#2874f0',fontWeight:'bold',cursor:'pointer'}}>Log in</span></span>
+                )}
+                {/* add log-in for existing users here */}
               </div>
             </div>
           </form>
