@@ -7,6 +7,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 export default function Login() {
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Request OTP');
+  //phone number-->emailField
   const [emailField, setEmailField] = useState(true);
   const [otpField, setOtpField] = useState(false);
   const [passField, setPassField] = useState(false);
@@ -24,48 +25,53 @@ export default function Login() {
     setGeneratedOTP(otp.toString());
     return otp;
   };
+//emailField replaced with phone Number but variable name not changed
+const inputField = () => {
+  if (emailField) {
+    const userEmailValue = userEmail || (phoneNoInputRef.current && phoneNoInputRef.current.value);
 
-  const inputField = () => {
-    if (emailField) {
-      const userEmailValue = userEmail || (phoneNoInputRef.current && phoneNoInputRef.current.value);
-
-      if ((userEmailValue?.length==10)) {
-        setEmailField(false);
-        setOtpField(true);
-        setButtonText('Validate OTP');
-        generateRandomOTP();
-      } else {
-        toast.error('Invalid Contact Details');
-      }
-    } else if (otpField) {
-      const enteredOTP = otpInputRef.current?.value;
-
-      if (!enteredOTP || enteredOTP !== generatedOTP) {
-        toast.error('Please enter Valid OTP');
-        return;
-      }
-      setOtpField(false);
-      setPassField(true);
-      setButtonText('Sign In');
-    } else if (passField) {
-      const userPassword = passwordInputRef.current?.value;
-      if (!userPassword) {
-        toast.error('Please set your password');
-        return;
-      }
-      if (userPassword.length < 8) {
-        toast.error('Password must be at least 8 characters long');
-        return;
-      }
-      const userDetails = {
-        phoneno: userEmail,
-        password: userPassword,
-      };
-
-      localStorage.setItem('userDetails', JSON.stringify(userDetails));
-      navigate('/Home');
+    if ((userEmailValue?.length === 10)) {
+      setEmailField(false);
+      setOtpField(true);
+      setButtonText('Validate OTP');
+      generateRandomOTP();
+    } else {
+      toast.error('Invalid Contact Details');
     }
-  };
+  } else if (otpField) {
+    const enteredOTP = otpInputRef.current?.value;
+
+    if (!enteredOTP || enteredOTP !== generatedOTP) {
+      toast.error('Please enter a valid OTP');
+      return;
+    }
+    setOtpField(false);
+    setPassField(true);
+    setButtonText('Sign In');
+  } else if (passField) {
+    const userPassword = passwordInputRef.current?.value;
+    if (!userPassword) {
+      toast.error('Please set your password');
+      return;
+    }
+    // Enhance password strength by requiring a mix of characters
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+
+    if (!passwordRegex.test(userPassword)) {
+      toast.error('Password: 8+ characters, with uppercase, lowercase, number, and special character.');
+      return;
+    }
+
+    const userDetails = {
+      phoneno: userEmail,
+      password: userPassword,
+    };
+
+    localStorage.setItem('userDetails', JSON.stringify(userDetails));
+    navigate('/Home');
+  }
+};
+
 
   return (
     <>
@@ -109,7 +115,7 @@ export default function Login() {
                   fontSize: '25px',
                 }}
               >
-                Login
+                Sign up
               </span>
               <span>
                 Get access to your Orders, Wishlist and Recommendations
