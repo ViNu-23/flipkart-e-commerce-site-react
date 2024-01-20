@@ -233,6 +233,7 @@ export default function Login() {
                 >
                   {buttonText}
                 </button>
+                <span style={{fontSize:'small',textAlign:'center'}}>Already have an account? <span style={{color:'#2874f0',fontWeight:'bold'}}>Log in</span></span>
               </div>
             </div>
           </form>
