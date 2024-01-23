@@ -101,7 +101,6 @@ const inputField = () => {
                 color: '#fff',
                 padding: '30px',
                 width: '330px',
-
               }}
             >
               <span
