@@ -71,8 +71,6 @@ const inputField = () => {
     navigate('/Home');
   }
 };
-
-
   return (
     <>
       <ToastContainer />
@@ -83,7 +81,6 @@ const inputField = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: '#2874f0',
-
         }}
       >
         <div
@@ -92,7 +89,6 @@ const inputField = () => {
             display: 'flex',
             backgroundColor: '#fff',
             flexDirection: isSmallScreen ? 'column' : 'row',
-
           }}
         >
           {!isSmallScreen && (
